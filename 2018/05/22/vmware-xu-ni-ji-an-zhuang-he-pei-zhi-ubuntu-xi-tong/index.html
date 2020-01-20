@@ -1,0 +1,1922 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Vmware虚拟机安装和配置Ubuntu系统, 贾志翔的博客">
+    <meta name="description" content="创建带有 SCSI 控制器类型、虚拟机磁盘类型以及与旧版 VMware 产品兼容性等高级选项的虚拟机
+
+安装前准备：
+
+安装好VMwareWorkstation
+Ubuntu16.04镜像文件
+（下载地址链接：https://pan.bai">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Vmware虚拟机安装和配置Ubuntu系统 | 贾志翔的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<link rel="alternate" href="/atom.xml" title="贾志翔的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">贾志翔的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/https://www.jiazhixiang.xyz/myBook/" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Python教程</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>公告</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/wechat" class="waves-effect waves-light">
+      
+      <i class="fab fa-weixin" style="zoom: 0.6;"></i>
+      
+      <span>Python技术客栈</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于本站</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">贾志翔的博客</div>
+        <div class="logo-desc">
+            
+            jia jiazhixiang jiaxiaochu jiaxiaochu.github.io
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw fa-link"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/tags " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/archives " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/https://www.jiazhixiang.xyz/myBook/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Python教程
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			公告
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/wechat" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-weixin"></i>
+			
+			Python技术客栈
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于本站
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/jiaxiaochu/jiaxiaochu.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/jiaxiaochu/jiaxiaochu.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Vmware虚拟机安装和配置Ubuntu系统</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/环境配置/">
+                                <span class="chip bg-color">环境配置</span>
+                            </a>
+                        
+                            <a href="/tags/系统配置/">
+                                <span class="chip bg-color">系统配置</span>
+                            </a>
+                        
+                            <a href="/tags/Ubuntu/">
+                                <span class="chip bg-color">Ubuntu</span>
+                            </a>
+                        
+                            <a href="/tags/VMware/">
+                                <span class="chip bg-color">VMware</span>
+                            </a>
+                        
+                            <a href="/tags/虚拟机/">
+                                <span class="chip bg-color">虚拟机</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/『环境配置』-工欲善其事，必先利其器/" class="post-category">
+                                『环境配置』- 工欲善其事，必先利其器
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-05-22
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+				
+                
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><strong>创建带有 SCSI 控制器类型、虚拟机磁盘类型以及与旧版 VMware 产品兼容性等高级选项的虚拟机</strong></p>
+<ul>
+<li><p>安装前准备：</p>
+<ul>
+<li>安装好VMwareWorkstation</li>
+<li>Ubuntu16.04镜像文件<ul>
+<li>（下载地址链接：<a href="https://pan.baidu.com/s/1MSBBv9NOh7_cFgTMUQPEhQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1MSBBv9NOh7_cFgTMUQPEhQ</a> 提取码：w6g7 ）</li>
+</ul>
+</li>
+<li>Ubuntu18.04镜像文件<ul>
+<li>（下载地址链接：链接：<a href="https://pan.baidu.com/s/1uhPj0ttM9M7QxpR3Z4LI5g" target="_blank" rel="noopener">https://pan.baidu.com/s/1uhPj0ttM9M7QxpR3Z4LI5g</a> 提取码：il08 ）<a id="more"></a>
+<h3 id="一、Ubuntu的初步安装"><a href="#一、Ubuntu的初步安装" class="headerlink" title="一、Ubuntu的初步安装"></a>一、Ubuntu的初步安装</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>创建新的虚拟机</p>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554713786949.png" alt="1554713786949"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554713919815.png" alt="1554713919815"></p>
+<p>点击下一步，如下图所示</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554714395837.png" alt="1554714395837"></p>
+<p>选择兼容性版本</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554714611043.png" alt="1554714611043"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554714641613.png" alt="1554714641613"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554714669480.png" alt="1554714669480"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554714696310.png" alt="1554714696310"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554714767912.png" alt="1554714767912"></p>
+<p>注意修改的信息</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554714861230.png" alt="1554714861230"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554714922826.png" alt="1554714922826"></p>
+<p>修改处理器配置信息，如下图所示</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715071537.png" alt="1554715071537"></p>
+<p>虚拟机内存配置，最低要求2GB,可以根据自己的需求修改，后期也可以再更改</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715123156.png" alt="1554715123156"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715260124.png" alt="1554715260124"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715283480.png" alt="1554715283480"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715310027.png" alt="1554715310027"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715336946.png" alt="1554715336946"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715445357.png" alt="1554715445357"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715463889.png" alt="1554715463889"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715479180.png" alt="1554715479180"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715497915.png" alt="1554715497915"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715586157.png" alt="1554715586157"></p>
+<p>此时，切记千万不要手快点开电源！！！</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715685795.png" alt="1554715685795"></p>
+<h3 id="二、Ubuntu系统安装设置"><a href="#二、Ubuntu系统安装设置" class="headerlink" title="二、Ubuntu系统安装设置"></a>二、Ubuntu系统安装设置</h3><ul>
+<li>设置加载镜像</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715904976.png" alt="1554715904976"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554715948576.png" alt="1554715948576"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716035134.png" alt="1554716035134"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716093894.png" alt="1554716093894"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716176488.png" alt="1554716176488"></p>
+<p><strong>这些完成后就可以直接开启虚拟机了</strong></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716252197.png" alt="1554716252197"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716334005.png" alt="1554716334005"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716370278.png" alt="1554716370278"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716422946.png" alt="1554716422946"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716459440.png" alt="1554716459440"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716488179.png" alt="1554716488179"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716543173.png" alt="1554716543173"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716575158.png" alt="1554716575158"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716602325.png" alt="1554716602325"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716620502.png" alt="1554716620502"></p>
+<p>拖动窗口，点 continue 继续下一步</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716700582.png" alt="1554716700582"></p>
+<p>设置自己的用户名和密码 :</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716728355.png" alt="1554716728355"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716905189.png" alt="1554716905189"></p>
+<p>安装进行中，等待安装</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554716944869.png" alt="1554716944869"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554719354860.png" alt="1554719354860"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554731409117.png" alt="1554731409117"></p>
+<p>点击 Restart Now 进行重启，</p>
+<p>如果出现如下图所示的状况，导致无法进入系统界面，需要点击Vmware的重新启动客户机按钮进行重新启动</p>
+<p>如下图所示：</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554731666457.png" alt="1554731666457"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554776517422.png" alt="1554776517422"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554776873497.png" alt="1554776873497"></p>
+<p>如果出现如下情况，<strong>切记千万不要选择更新</strong></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554778547735.png" alt="1554778547735"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554778836786.png" alt="1554778836786"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554778863798.png" alt="1554778863798"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554778886569.png" alt="1554778886569"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554778926607.png" alt="1554778926607"></p>
+<ul>
+<li>在安装好的Ubuntu系统中鼠标右键选择 Open Terminal，打开Ubuntu系统的命令终端</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554778966309.png" alt="1554778966309"></p>
+<ul>
+<li>然后，修改hosts文件<ul>
+<li>etc目录下的hosts文件<br><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/WechatIMG42.png" alt="WechatIMG42"></li>
+</ul>
+</li>
+<li>使用vim修改编辑hosts文件<br><code>sudo vi /etc/hosts</code><br><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/WechatIMG41.png" alt="WechatIMG41"></li>
+<li>使用gedit修改编辑hosts文件<br><code>sudo gedit /etc/hosts</code><br><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/WechatIMG43.png" alt="WechatIMG43"><br><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/WechatIMG44.png" alt="WechatIMG44"><br><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/WechatIMG46.png" alt="WechatIMG46"></li>
+</ul>
+<p>如此，即代表系统安装成功</p>
+<h3 id="三、安装Vmware-Tools"><a href="#三、安装Vmware-Tools" class="headerlink" title="三、安装Vmware Tools"></a>三、安装Vmware Tools</h3><blockquote>
+<p>为了让系统能像下图一样适应客户机，需要安装Vmware Tools</p>
+</blockquote>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554777043804.png" alt="1554777043804"></p>
+<ul>
+<li>在安装好的Ubuntu系统中鼠标右键选择 Open Terminal，打开Ubuntu系统的命令终端</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554778975398.png" alt="1554778975398"></p>
+<ol>
+<li><p>获取管理员权限</p>
+<p>输入以下命令，来获取管理员权限，密码是你在上面设置的密码：<code>sudo passwd</code></p>
+</li>
+</ol>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554779131062.png" alt="1554779131062"></p>
+<ul>
+<li>前面我设置的密码是<code>chuanzhi</code></li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554779170274.png" alt="1554779170274"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554779303171.png" alt="1554779303171"></p>
+<ul>
+<li>如果上面你设置的密码不是<code>chuanzhi</code>,请输入你自己设置的密码</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554779643739.png" alt="1554779643739"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554779704503.png" alt="1554779704503"></p>
+<ul>
+<li>切换到 root 最高权限用户</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554779872183.png" alt="1554779872183"></p>
+<h4 id="安装Vmware-tools工具"><a href="#安装Vmware-tools工具" class="headerlink" title="安装Vmware tools工具"></a>安装Vmware tools工具</h4><blockquote>
+<p>选择Vmware顶部工具栏里的 <strong>安装Vmware Tools（T）</strong>选项</p>
+</blockquote>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554780158202.png" alt="1554780158202"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554780239135.png" alt="1554780239135"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554781022857.png" alt="1554781022857"></p>
+<ul>
+<li><p>在安装好的Ubuntu系统中鼠标右键选择 Open Terminal，打开Ubuntu系统的命令终端</p>
+<ul>
+<li>打开终端后，进行下面设置</li>
+</ul>
+</li>
+<li><p>复制CD中的 VMwareTools-10.0.10-4301679.tar.gz 文件到根目录下：</p>
+<p><code>cp /media/user/VMware\ Tools/VMwareTools-10.0.10-4301679.tar.gz /</code></p>
+</li>
+<li><p>然到移动到根目录：</p>
+<p><code>cd /</code></p>
+</li>
+<li><p>解压 VMwareTools-10.0.10-4301679.tar.gz：</p>
+<p><code>tar -zxvf VMwareTools-10.0.10-4301679.tar.gz</code></p>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554782968942.png" alt="1554782968942"></p>
+<ul>
+<li>按下回车，执行解压<ul>
+<li>如下如所示</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554787027354.png" alt="1554787027354"></p>
+<ul>
+<li><p>解压完成后进入解压文件夹vmware-tools-distrib</p>
+<p><code>cd vmware-tools-distrib</code></p>
+</li>
+<li><p>运行安装程序：</p>
+<p><code>./vmware-install.pl</code></p>
+</li>
+<li><p>一路 y 加 回车</p>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554787211386.png" alt="1554787211386"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554787346650.png" alt="1554787346650"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554787370075.png" alt="1554787370075"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554787422575.png" alt="1554787422575"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554787787278.png" alt="1554787787278"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554787868385.png" alt="1554787868385"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554788380134.png" alt="1554788380134"></p>
+<ul>
+<li>如下图所示</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554788414292.png" alt="1554788414292"></p>
+<h3 id="四、设置共享文件夹"><a href="#四、设置共享文件夹" class="headerlink" title="四、设置共享文件夹"></a>四、设置共享文件夹</h3><blockquote>
+<p>设置共享文件夹，可以实现Windows系统和Ubuntu系统的复制粘贴功能</p>
+</blockquote>
+<ul>
+<li>在菜单栏找到虚拟机-&gt;设置，添加自己的共享文件夹</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554788596453.png" alt="1554788596453"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554788674038.png" alt="1554788674038"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554788694696.png" alt="1554788694696"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554788733020.png" alt="1554788733020"></p>
+<p>如此，即完成了Ubuntu系统的初步设置</p>
+<h3 id="五、修改Ubuntu系统的更新源"><a href="#五、修改Ubuntu系统的更新源" class="headerlink" title="五、修改Ubuntu系统的更新源"></a>五、修改Ubuntu系统的更新源</h3><blockquote>
+<p>更改apt源为国内源方法早就有了，内容大同小异，我们应当掌握其规律了，其实每一版内容不同的地方就是版本号（或者官方一点的说：系统代号），所以我们先了解下新版本的系统代号：<br>使用命令：lsb_release -c<br>得到本系统的系统代号，如下图所示：<br>同样的我们也可以得到之前任意版本的系统代号：<br>Ubuntu 12.04 (LTS)代号为precise。<br>Ubuntu 14.04 (LTS)代号为trusty。<br>Ubuntu 15.04 代号为vivid。<br>Ubuntu 15.10 代号为wily。<br>Ubuntu 16.04 (LTS)代号为xenial。<br>所以这也就解释了为什么利用搜索引擎搜出来的那么多方案里面内容不尽相同的原因，因为大家更改apt安装源时用的系统不一样。</p>
+</blockquote>
+<ul>
+<li>*<em>查看系统版本代号 *</em><code>lsb_release -a</code></li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554789205438.png" alt="1554789205438"></p>
+<p><font color="red" size="5" face="黑体">注意：一定要对准自己的Ubuntu系统版本代号，检查是Ubuntu16.04还是Ubuntu18.04</font></p>
+<p><strong>下面分别提供Ubuntu16.04和ubuntu 18.04两个不同系统版本的阿里源</strong></p>
+<ul>
+<li>Ubuntu16.04对应阿里源</li>
+</ul>
+<pre><code># deb cdrom:[Ubuntu 16.04 LTS _Xenial Xerus_ - Release amd64 (20160420.1)]/ xenial main restricted
+deb-src http://archive.ubuntu.com/ubuntu xenial main restricted #Added by software-properties
+deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted multiverse universe #Added by software-properties
+deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted multiverse universe #Added by software-properties
+deb http://mirrors.aliyun.com/ubuntu/ xenial universe
+deb http://mirrors.aliyun.com/ubuntu/ xenial-updates universe
+deb http://mirrors.aliyun.com/ubuntu/ xenial multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-updates multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse #Added by software-properties
+deb http://archive.canonical.com/ubuntu xenial partner
+deb-src http://archive.canonical.com/ubuntu xenial partner
+deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted multiverse universe #Added by software-properties
+deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe
+deb http://mirrors.aliyun.com/ubuntu/ xenial-security multiverse</code></pre><ul>
+<li>Ubuntu18.04对应阿里源<ul>
+<li>如果是Ubuntu18.04系统可以参照我的简书配置：<a href="https://www.jianshu.com/p/e5677ebd5341" target="_blank" rel="noopener">https://www.jianshu.com/p/e5677ebd5341</a></li>
+</ul>
+</li>
+</ul>
+<pre><code>deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</code></pre><h4 id="修改系统更新源方法步骤如下："><a href="#修改系统更新源方法步骤如下：" class="headerlink" title="修改系统更新源方法步骤如下："></a>修改系统更新源方法步骤如下：</h4><blockquote>
+<p>首先备份Ubuntu系统的官方源文件</p>
+</blockquote>
+<ul>
+<li>打开Ubuntu的命令终端，进入源文件 <code>sources.list</code> 所在的目录：<ul>
+<li>然后执行备份命令，执行 <code>sudo cp sources.list sources.list.backup</code> 对源文件内容进行备份，以防万一。</li>
+</ul>
+</li>
+</ul>
+<pre><code>cd /etc/apt
+sudo cp sources.list sources.list.backup</code></pre><p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554790544705.png" alt="1554790544705"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554790767758.png" alt="1554790767758"></p>
+<ul>
+<li>修改源文件内容<ul>
+<li>将上述对应系统版本的阿里源的文件内容全部复制，使用 <code>sudo vim sources.list</code> 打开文件，输入 <code>ggdG</code>（vim操作指令）删除所有内容（这句指令可以理解为删除第一行到最后一行的的全部内容）</li>
+</ul>
+</li>
+</ul>
+<pre><code>sudo vim sources.list    # 在 /etc/apt 目录下
+ggdG    # 使用vim打开 sources.list 文件后执行此命令</code></pre><ul>
+<li>将复制的阿里源文件内容全部粘贴到文件中后，输入 : 然后再输入wq 保存退出。</li>
+</ul>
+<p>值得注意的是 sources.list 文件的条目都是有格式的（通过上面的内容大家也看的出来），一般有如下形式：</p>
+<pre><code>deb http://site.example.com/debian distribution component1 component2 component3
+deb-src http://site.example.com/debian distribution component1 component2 component3</code></pre><p>所以后面几个参数是对软件包的分类（Ubuntu下是main， restricted，universe ，multiverse这四个）<br>所以你把内容写成:</p>
+<pre><code>deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted 
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed universe multiverse</code></pre><p>上面之类的也是可以的，之前我有这个疑惑，所以在这里一并告知和我有一样疑惑的朋友。</p>
+<h4 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a>更新源</h4><ul>
+<li>使用 <code>sudo apt-get update</code> 即可更新获取阿里软件源 提供的软件列表</li>
+</ul>
+<pre><code>sudo apt-get update</code></pre><p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554793359809.png" alt="1554793359809"></p>
+<h4 id="更新软件"><a href="#更新软件" class="headerlink" title="更新软件"></a>更新软件</h4><ul>
+<li>使用 <code>sudo apt-get upgrade</code> 即可跟新软件</li>
+</ul>
+<pre><code>sudo apt-get upgrade</code></pre><p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554793398077.png" alt="1554793398077"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554793429708.png" alt="1554793429708"></p>
+<ul>
+<li>如下图所示，即代表更新成功</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554797295052.png" alt="1554797295052"></p>
+<h3 id="六、安装VIM编辑器"><a href="#六、安装VIM编辑器" class="headerlink" title="六、安装VIM编辑器"></a>六、安装VIM编辑器</h3><ul>
+<li>在Ubuntu系统的命令终端输入 <code>sudo apt-get install vim</code> 进行下载</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554803724133.png" alt="1554803724133"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554803952271.png" alt="1554803952271"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554804086386.png" alt="1554804086386"></p>
+<ul>
+<li>检测是否安装成功<ul>
+<li>在命令终端输入 vim 回车</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554804141041.png" alt="1554804141041"></p>
+<ul>
+<li>如上图所示，即代表安装成功</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554804186592.png" alt="1554804186592"></p>
+<ul>
+<li>退出 vim<ul>
+<li>1.按下  ESC  键   </li>
+<li>2.再输入 ：</li>
+<li>3.最后输入  q 或 wq  即可</li>
+<li>4.回车</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554804467597.png" alt="1554804467597"></p>
+<ul>
+<li>安装完成后的 vim 是默认不显示行号的</li>
+<li>上图中在 /etc/vim/ 目录下打开的 输入 <code>sudo vi vimrc</code>后是不显示行号的，如下图所示</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554804649529.png" alt="1554804649529"></p>
+<ul>
+<li>进入编辑界面后，按下 G 键（这是大写的 G）直接跳转到文件的最后一行</li>
+<li>再次按下 i 键，进行编辑，输入 <code>set number</code>  如下图所示</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554804835256.png" alt="1554804835256"></p>
+<ul>
+<li>退出 vim<ul>
+<li>1.按下  ESC  键   </li>
+<li>2.再输入 ：</li>
+<li>3.最后输入  q 或 wq  即可</li>
+<li>4.回车</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554804906611.png" alt="1554804906611"></p>
+<ul>
+<li>检查设置行号是否生效</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554805087039.png" alt="1554805087039"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554805125404.png" alt="1554805125404"></p>
+<p>如此，即代表安装好修改配置成功</p>
+<h3 id="七、安装谷歌浏览器"><a href="#七、安装谷歌浏览器" class="headerlink" title="七、安装谷歌浏览器"></a>七、安装谷歌浏览器</h3><ul>
+<li><p>先下载谷歌浏览器的deb安装包</p>
+<ul>
+<li>下载地址如下：</li>
+</ul>
+<p><code>https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</code></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554813326034.png" alt="1554813326034"></p>
+</li>
+<li><p>等待下载完成</p>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554813365460.png" alt="1554813365460"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554813409803.png" alt="1554813409803"></p>
+<ul>
+<li><p>安装谷歌浏览器需执行以下两步，回到终端输入以下命令</p>
+<p><code>sudo apt install libappindicator1 libindicator7</code></p>
+</li>
+<li><p>关闭终端，打开下载的存放deb包的文件夹，空白处右键在这里打开终端</p>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554813646605.png" alt="1554813646605"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554813742619.png" alt="1554813742619"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554813992872.png" alt="1554813992872"></p>
+<ul>
+<li><p>输入以下命令</p>
+<p><code>sudo dpkg -i google-chrome-stable_current_amd64.deb</code></p>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554814165619.png" alt="1554814165619"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554814217647.png" alt="1554814217647"></p>
+<ul>
+<li><p>最后在终端中输入以下命令，修复依赖关系</p>
+<p><code>sudo apt -f install</code></p>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554814265937.png" alt="1554814265937"></p>
+<ul>
+<li>至此谷歌浏览器就安装好了，现在把它设置在快速启动栏</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554814413853.png" alt="1554814413853"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554814520209.png" alt="1554814520209"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554814557334.png" alt="1554814557334"></p>
+<ul>
+<li>最后将其移动到快速启动栏的合适位置，右键点击图标锁定到启动器，左键拖动选择合适位置！</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554814641809.png" alt="1554814641809"></p>
+<ul>
+<li>至此，谷歌浏览器即安装成功</li>
+</ul>
+<h3 id="八、安装Pycharm"><a href="#八、安装Pycharm" class="headerlink" title="八、安装Pycharm"></a>八、安装Pycharm</h3><blockquote>
+<p>下载地址：<a href="https://www.jetbrains.com/pycharm/download/#section=linux" target="_blank" rel="noopener">https://www.jetbrains.com/pycharm/download/#section=linux</a></p>
+</blockquote>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554814864232.png" alt="1554814864232"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554814899101.png" alt="1554814899101"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815355830.png" alt="1554815355830"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815374846.png" alt="1554815374846"></p>
+<ul>
+<li>右键安装包，点击“Extract Here”意思是提取到这里，相当于解压</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815431347.png" alt="1554815431347"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815480951.png" alt="1554815480951"></p>
+<ul>
+<li>提取完成后，会生成一个 pycharm-2019.1.1 的文件夹，然后双击进入该文件夹</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815530708.png" alt="1554815530708"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815580850.png" alt="1554815580850"></p>
+<ul>
+<li>，空白处右键在这里打开终端</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815684306.png" alt="1554815684306"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815714869.png" alt="1554815714869"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815763462.png" alt="1554815763462"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815809209.png" alt="1554815809209"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815836513.png" alt="1554815836513"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815856201.png" alt="1554815856201"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815880671.png" alt="1554815880671"></p>
+<ul>
+<li>选择主题</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815953777.png" alt="1554815953777"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554815989929.png" alt="1554815989929"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816006374.png" alt="1554816006374"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816038655.png" alt="1554816038655"></p>
+<ul>
+<li><p>到这里，我选择秘钥激活的方法</p>
+<ul>
+<li><p>百度：lanyus</p>
+</li>
+<li><p><a href="http://idea.lanyus.com/" target="_blank" rel="noopener">http://idea.lanyus.com/</a></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816196446.png" alt="1554816196446"></p>
+</li>
+</ul>
+</li>
+<li><p>修改 hosts 文件（hosts文件在 /etc 目录下）</p>
+</li>
+</ul>
+<pre><code>0.0.0.0 account.jetbrains.com
+0.0.0.0 www.jetbrains.com
+</code></pre><ul>
+<li>将上面两行代码添加到，hosts文件中</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816454362.png" alt="1554816454362"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816518699.png" alt="1554816518699"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816541195.png" alt="1554816541195"></p>
+<ul>
+<li>添加后如下图所示</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816591936.png" alt="1554816591936"></p>
+<ul>
+<li>退出 vim<ul>
+<li>1.按下  ESC  键   </li>
+<li>2.再输入 ：</li>
+<li>3.最后输入  q 或 wq  即可</li>
+<li>4.回车</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816648781.png" alt="1554816648781"></p>
+<ul>
+<li>获取注册码后输入</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816683863.png" alt="1554816683863"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816725814.png" alt="1554816725814"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816739779.png" alt="1554816739779"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816753105.png" alt="1554816753105"></p>
+<ul>
+<li>指定Python3解释器（1）</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816822783.png" alt="1554816822783"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816890874.png" alt="1554816890874"></p>
+<ul>
+<li>指定Python3解释器（2）</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554816962147.png" alt="1554816962147"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554817009349.png" alt="1554817009349"></p>
+<ul>
+<li>可以通过在命令终端输入：<code>whereis python</code>找到系统的Python解释器路径</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554817125613.png" alt="1554817125613"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554817211879.png" alt="1554817211879"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554817253896.png" alt="1554817253896"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554817287968.png" alt="1554817287968"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554817306973.png" alt="1554817306973"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554817354430.png" alt="1554817354430"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554817392028.png" alt="1554817392028"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554817411242.png" alt="1554817411242"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554817434009.png" alt="1554817434009"></p>
+<ul>
+<li>如此，Python3的解释器便指定完成</li>
+</ul>
+<h4 id="添加Pycharm桌面快捷方式"><a href="#添加Pycharm桌面快捷方式" class="headerlink" title="添加Pycharm桌面快捷方式"></a>添加Pycharm桌面快捷方式</h4><ul>
+<li><p>第一步</p>
+<ul>
+<li><p>创建Pycharm.desktop文件并用gedit的打开</p>
+<ul>
+<li><p>sudo gedit /usr/share/applications/Pycharm.desktop</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554898559678.png" alt="1554898559678"></p>
+</li>
+<li><p>然后就会弹出一个新框</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>第二步</p>
+<ul>
+<li><p>粘贴下面的代码输入并保存</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>Desktop Entry<span class="token punctuation">]</span>
+Type<span class="token operator">=</span>Application
+Name<span class="token operator">=</span>Pycharm
+GenericName<span class="token operator">=</span>Pycharm3
+Comment<span class="token operator">=</span>Pycharm3:The Python IDE
+Exec<span class="token operator">=</span>sh /home/python/Downloads/pycharm-2019.1.1/bin/pycharm.sh
+Icon<span class="token operator">=</span>/home/python/Downloads/pycharm-2019.1.1/bin/pycharm.png
+Terminal<span class="token operator">=</span>pycharm
+Categories<span class="token operator">=</span>Pycharm
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>注意一定要将Desktop Entry复制进去，也就是上面的全部都要复制进去</strong></p>
+<ul>
+<li>Exec 的路径是 <strong><font color="red" size="5" face="黑体">pycharm.sh</font></strong> 的所在路径，即 pycharm 的启动文件</li>
+<li>Icon 的路径是 <strong><font color="red" size="5" face="黑体">pycharm.png</font></strong> 的所在路径，即 pycharm 的图标</li>
+</ul>
+</li>
+</ul>
+<p>我下载解压后的路径，如下图</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554897945848.png" alt="1554897945848"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554898166630.png" alt="1554898166630"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554898231594.png" alt="1554898231594"></p>
+<ul>
+<li>路径：<code>/home/python/Downloads/pycharm-2019.1.1/bin</code><ul>
+<li>Exec 的路径是 <strong><font color="red" size="5" face="黑体">pycharm.sh</font></strong> 的所在路径，即 pycharm 的启动文件<ul>
+<li><code>/home/python/Downloads/pycharm-2019.1.1/bin/pycharm.sh</code></li>
+</ul>
+</li>
+<li>Icon 的路径是 <strong><font color="red" size="5" face="黑体">pycharm.png</font></strong> 的所在路径，即 pycharm 的图标<ul>
+<li><code>/home/python/Downloads/pycharm-2019.1.1/bin/pycharm.png</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>创建的Pycharm.desktop文件如下</li>
+</ul>
+<pre><code>[Desktop Entry]
+Type=Application
+Name=Pycharm
+GenericName=Pycharm3
+Comment=Pycharm3:The Python IDE
+Exec=sh /home/python/Downloads/pycharm-2019.1.1/bin/pycharm.sh
+Icon=/home/python/Downloads/pycharm-2019.1.1/bin/pycharm.png
+Terminal=pycharm
+Categories=Pycharm
+</code></pre><p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554898498094.png" alt="1554898498094"></p>
+<ul>
+<li>修改完成后，即可发现Pycharm的快捷方式</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554898638150.png" alt="1554898638150"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554898720552.png" alt="1554898720552"></p>
+<ul>
+<li>如此，即表示配置成功</li>
+</ul>
+<h3 id="九、安装MySQL数据库"><a href="#九、安装MySQL数据库" class="headerlink" title="九、安装MySQL数据库"></a>九、安装MySQL数据库</h3><blockquote>
+<p>有两种安装方法，请将两种方法都阅读完后，再选择其中的一种方式进行安装</p>
+</blockquote>
+<p>方法一 使用命令安装MySQL数据库</p>
+<ol>
+<li>安装前先更新软件包列表：</li>
+</ol>
+<pre><code>在终端执行如下命令：
+sudo apt-get update</code></pre><p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/mysql-20190518191456335.png" alt="image-20190518191456335"><br>Vmware虚拟机安装和配置Ubuntu系统/</p>
+<ol start="2">
+<li>在Ubuntu16.04上安装MySQL：</li>
+</ol>
+<pre><code>在终端执行如下命令：
+sudo apt-get install mysql-server mysql-client</code></pre><p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/mysql-20190518191721166.png" alt="image-20190518191721166"></p>
+<ol start="3">
+<li>在安装过程中需要你输入MySQL管理员用户（root）密码，如下图</li>
+</ol>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/mysql-20190518192226707.png" alt="image-20190518192226707"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/mysql-20190518192828216.png" alt="image-20190518192828216"></p>
+<p>如上即代表安装完成</p>
+<hr>
+<p>方法二 <strong>通过APT方式安装</strong></p>
+<blockquote>
+<p>说明：此种方式完全参考官方提供的教程:<br>地址：<a href="https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/" target="_blank" rel="noopener">https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/</a></p>
+</blockquote>
+<p>注意：通过APT方式安装的版本都是现在最新的版本，现在我安装的是5.7.18。通过这种方式安装好之后开机自启动都已经配置好，和命令行上的环境变量，无需手动配置。</p>
+<ol>
+<li>下载官方提供的mysql-apt-config.deb包进行APT源设置，下载地址：<a href="https://dev.mysql.com/downloads/repo/apt/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/apt/</a></li>
+</ol>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554899654766.png" alt="1554899654766"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554899907427.png" alt="1554899907427"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554899922743.png" alt="1554899922743"></p>
+<ul>
+<li>找到下载的包路径</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554900025755.png" alt="1554900025755"></p>
+<ul>
+<li>输入如下命令：<ul>
+<li><code>sudo dpkg -i mysql-apt-config_0.8.12-1_all.deb</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554900103387.png" alt="1554900103387"></p>
+<ul>
+<li>运行之后会出现如下界面：</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554900135846.png" alt="1554900135846"></p>
+<ul>
+<li>一般只需要默认，按方向键选择OK回车即可。</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554902470640.png" alt="1554902470640"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554900217426.png" alt="1554900217426"></p>
+<ul>
+<li>完成后使用以下命令从MySQL APT存储库更新包信息（<em>此步骤是必需的</em>）：<ul>
+<li><code>sudo apt-get update</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554900482957.png" alt="1554900482957"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554902683502.png" alt="1554902683502"></p>
+<blockquote>
+<p>说明：官方说通过这个工具这样操作之后，安装MySQL时就是按照上面选择的来进行。</p>
+</blockquote>
+<ol start="2">
+<li>安装</li>
+</ol>
+<ul>
+<li><p>通过以下命令安装MySQL</p>
+<ul>
+<li><code>sudo apt-get install mysql-server</code></li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554900531962.png" alt="1554900531962"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554900558244.png" alt="1554900558244"></p>
+<ul>
+<li>这将安装MySQL服务器的包，以及客户端和数据库公共文件的包。</li>
+</ul>
+<p>此时如果提示依赖不足，如下所示：</p>
+<ul>
+<li><strong>如果没出现依赖问题，那么就不需要使用此命令。</strong></li>
+</ul>
+</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554900813099.png" alt="1554900813099"></p>
+<p>​    那么需要运行下面命令解决依赖问题</p>
+<p>​        <code>sudo apt-get install -f</code></p>
+<p>​    安装MySQL时会一并安装如下所示的软件：</p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554900899005.png" alt="1554900899005"></p>
+<p>完成后再次运行 <code>sudo apt-get install mysql-server</code></p>
+<p><strong>如果没出现依赖问题，那么就不需要使用此命令。</strong></p>
+<ul>
+<li>在安装过程中，系统会要求您为MySQL安装的root用户提供密码,输入即可,如下所示：</li>
+</ul>
+<blockquote>
+<p>重要</p>
+<p>确保记住您设置的root密码。想要稍后设置密码的用户可以在对话框中将 密码字段留空，只需按确定即可 ; 在这种情况下，对于使用Unix套接字文件的连接，将通过<a href="https://dev.mysql.com/doc/refman/8.0/en/socket-pluggable-authentication.html" target="_blank" rel="noopener">Socket Peer-Credential Pluggable Authentication</a>对服务器的root访问进行身份 <a href="https://dev.mysql.com/doc/refman/8.0/en/socket-pluggable-authentication.html" target="_blank" rel="noopener">验证</a>。您可以稍后使用程序<strong>mysql_secure_installation</strong>设置root密码 。</p>
+</blockquote>
+<ul>
+<li>我这里密码设置为：mysql  (为了避免忘记密码，建议设置为:mysql)</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554901073287.png" alt="1554901073287"></p>
+<blockquote>
+<p>MySQL8.0采用了新的加密方式，一定要注意，正是因为这个加密方式才导致Ubuntu18.04用设置的root密码登录不了MySQL，因为Ubuntu18.04的终端可能有问题，并不支持这个新的加密方式。幸好有界面可以让我们选择使用旧版本5.x的加密方式，所以果断选择采用5.x的加密方式。</p>
+</blockquote>
+<ul>
+<li>确认密码</li>
+</ul>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554901161042.png" alt="1554901161042"></p>
+<p><img src="/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/1554901186844.png" alt="1554901186844"></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.jiazhixiang.xyz" rel="external nofollow noreferrer">賈誌翔</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.jiazhixiang.xyz/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/">https://www.jiazhixiang.xyz/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://www.jiazhixiang.xyz" target="_blank">賈誌翔</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/环境配置/">
+                                    <span class="chip bg-color">环境配置</span>
+                                </a>
+                            
+                                <a href="/tags/系统配置/">
+                                    <span class="chip bg-color">系统配置</span>
+                                </a>
+                            
+                                <a href="/tags/Ubuntu/">
+                                    <span class="chip bg-color">Ubuntu</span>
+                                </a>
+                            
+                                <a href="/tags/VMware/">
+                                    <span class="chip bg-color">VMware</span>
+                                </a>
+                            
+                                <a href="/tags/虚拟机/">
+                                    <span class="chip bg-color">虚拟机</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">如果我的文章对你有帮助，可以请我喝一杯咖啡~</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/images/pay/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/images/pay/wechatpay.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2018/06/12/zai-deepin-xi-tong-xia-an-zhuang-anaconda/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="在Deepin系统下安装Anaconda">
+                        
+                        <span class="card-title">在Deepin系统下安装Anaconda</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            运行安装Anacondabash Anaconda3-4.3.1-Linux-x86_64.sh
+安装具体步骤在执行上一步骤之后会出现以下：
+Welcome to Anaconda3 5.0.1
+
+In order to continue 
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-06-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/『环境配置』-工欲善其事，必先利其器/" class="post-category">
+                                    『环境配置』- 工欲善其事，必先利其器
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/环境配置/">
+                        <span class="chip bg-color">环境配置</span>
+                    </a>
+                    
+                    <a href="/tags/Deepin/">
+                        <span class="chip bg-color">Deepin</span>
+                    </a>
+                    
+                    <a href="/tags/Anaconda/">
+                        <span class="chip bg-color">Anaconda</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/05/22/windows-xi-tong-an-zhuang-pei-zhi-pycharm-zhuan-ye-ban/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Windows系统安装配置Pycharm专业版">
+                        
+                        <span class="card-title">Windows系统安装配置Pycharm专业版</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+
+安装配置Pycharm前请先安装Python解释器Python解释器配置文档连接：http://www.jiazhixiang.xyz/2018/05/15/Windows系统Python解释器的安装配置/视屏教程：Windows系统P
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-05-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/『环境配置』-工欲善其事，必先利其器/" class="post-category">
+                                    『环境配置』- 工欲善其事，必先利其器
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/环境配置/">
+                        <span class="chip bg-color">环境配置</span>
+                    </a>
+                    
+                    <a href="/tags/Pycharm/">
+                        <span class="chip bg-color">Pycharm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 贾志翔的博客<br />'
+            + '文章作者: 賈誌翔<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2018-2020</span>
+            <a href="https://www.jiazhixiang.xyz" target="_blank">賈誌翔</a>
+            |&nbsp;Powered by&nbsp;<a href="https://www.jiazhixiang.xyz/" target="_blank">吹花小筑工作室</a>
+            |&nbsp;Author&nbsp;<a href="https://www.jiazhixiang.xyz/" target="_blank">贾志翔</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">79.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/jiaxiaochu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:zhixiang.jia@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1072022525" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1072022525" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

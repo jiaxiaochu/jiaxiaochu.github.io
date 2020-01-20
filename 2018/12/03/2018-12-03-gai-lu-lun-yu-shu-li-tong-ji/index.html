@@ -1,0 +1,1425 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="概率论与数理统计, 贾志翔的博客">
+    <meta name="description" content="
+参考斯坦福大学2014（吴恩达）机器学习教程中文笔记，感谢编者黄海广博士。
+
+概率论的基本概念随机试验在概率论中，将具有以下三个特点的事件称为随机试验：
+
+可以在相同的条件下重复进行
+每次试验的可能结果不止一个，并且事先能够明确事件的所有">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>概率论与数理统计 | 贾志翔的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<link rel="alternate" href="/atom.xml" title="贾志翔的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">贾志翔的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/https://www.jiazhixiang.xyz/myBook/" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Python教程</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>公告</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/wechat" class="waves-effect waves-light">
+      
+      <i class="fab fa-weixin" style="zoom: 0.6;"></i>
+      
+      <span>Python技术客栈</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于本站</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">贾志翔的博客</div>
+        <div class="logo-desc">
+            
+            jia jiazhixiang jiaxiaochu jiaxiaochu.github.io
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fas fa-fw fa-link"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/tags " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/archives " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/https://www.jiazhixiang.xyz/myBook/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Python教程
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			公告
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/wechat" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-weixin"></i>
+			
+			Python技术客栈
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于本站
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/jiaxiaochu/jiaxiaochu.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/jiaxiaochu/jiaxiaochu.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">概率论与数理统计</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/学习笔记/" class="post-category">
+                                学习笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-12-03
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    32 分
+                </div>
+                
+				
+                
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p><strong>参考</strong><a href="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes" target="_blank" rel="noopener">斯坦福大学2014（吴恩达）机器学习教程中文笔记</a>，感谢编者黄海广博士。</p>
+</blockquote>
+<h1 id="概率论的基本概念"><a href="#概率论的基本概念" class="headerlink" title="概率论的基本概念"></a>概率论的基本概念</h1><h2 id="随机试验"><a href="#随机试验" class="headerlink" title="随机试验"></a>随机试验</h2><p>在概率论中，将具有以下三个特点的事件称为<strong>随机试验</strong>：</p>
+<ul>
+<li>可以在相同的条件下重复进行</li>
+<li>每次试验的可能结果不止一个，并且事先能够明确事件的所有可能结果</li>
+<li>进行一次试验前不能确定哪个结果会出现</li>
+</ul>
+<h2 id="样本空间、随机事件"><a href="#样本空间、随机事件" class="headerlink" title="样本空间、随机事件"></a>样本空间、随机事件</h2><h3 id="样本空间"><a href="#样本空间" class="headerlink" title="样本空间"></a>样本空间</h3><p>随机事件$E$的所有基本结果组成的集合为$E$的<strong>样本空间</strong>，记为$S$。样本空间的元素，即$E$的每个结果，称为样本点或基本事件，有时记为$\omega$。</p>
+<h3 id="随机事件"><a href="#随机事件" class="headerlink" title="随机事件"></a>随机事件</h3><p>称试验$E$的样本空间$S$的子集为$E$的<strong>随机事件</strong>，简称<strong>事件</strong>。在每次试验中，当且仅当这一子集中的一个样本点出现时，称这一<strong>事件发生</strong>。<br>特别地，由一个样本点组成的单点集，称为<strong>基本事件</strong>；样本空间$S$包含所有的基本点，每次试验中总是发生，称为<strong>必然事件</strong>，记为$\Omega$；空集$\varnothing$每次都不可能发生，称为<strong>不可能事件</strong>。</p>
+<h3 id="事件间的关系与事件的运算"><a href="#事件间的关系与事件的运算" class="headerlink" title="事件间的关系与事件的运算"></a>事件间的关系与事件的运算</h3><h4 id="子事件"><a href="#子事件" class="headerlink" title="子事件"></a>子事件</h4><p>$A \subset B$，若$A$发生，则$B$发生。</p>
+<h4 id="相等事件"><a href="#相等事件" class="headerlink" title="相等事件"></a>相等事件</h4><p>$A = B$，即$A \subset B$，且$B \subset A$ 。</p>
+<h4 id="和事件"><a href="#和事件" class="headerlink" title="和事件"></a>和事件</h4><p>$A\bigcup B$（或$A + B$），$A$与$B$中至少有一个发生。</p>
+<h4 id="差事件"><a href="#差事件" class="headerlink" title="差事件"></a>差事件</h4><p>$A - B={x|x\in A,x\not\in B}$，$A$发生但$B$不发生。</p>
+<h4 id="积事件"><a href="#积事件" class="headerlink" title="积事件"></a>积事件</h4><p>$A\bigcap B$（或${AB}$），$A$与$B$同时发生。</p>
+<h4 id="互斥事件（互不相容）"><a href="#互斥事件（互不相容）" class="headerlink" title="互斥事件（互不相容）"></a>互斥事件（互不相容）</h4><p>$A\bigcap B$=$\varnothing$。基本事件是两两互斥的。</p>
+<h4 id="互逆事件（对立事件）"><a href="#互逆事件（对立事件）" class="headerlink" title="互逆事件（对立事件）"></a>互逆事件（对立事件）</h4><p>$A\bigcap B=\varnothing ,A\bigcup B=\Omega ,A=\overline{B},B=\overline{A}$</p>
+<h4 id="完全事件组"><a href="#完全事件组" class="headerlink" title="完全事件组"></a>完全事件组</h4><p>${ {A}<em>{1} }{ {A}</em>{2} }\cdots { {A}<em>{n} }$两两互斥，且和事件为必然事件，即$A_i\bigcap A_j=\varnothing,i\ne j,\bigcap</em>{i=1}^n=\Omega$</p>
+<h4 id="交换律"><a href="#交换律" class="headerlink" title="交换律"></a>交换律</h4><p>$A\bigcup B=B\bigcup A,A\bigcap B=B\bigcap A$</p>
+<h4 id="结合律"><a href="#结合律" class="headerlink" title="结合律"></a>结合律</h4><p>$(A\bigcup B)\bigcup C=A\bigcup (B\bigcup C)$</p>
+<h4 id="分配律"><a href="#分配律" class="headerlink" title="分配律"></a>分配律</h4><p>$(A\bigcap B)\bigcap C=A\bigcap (B\bigcap C)$</p>
+<h4 id="德·摩根律"><a href="#德·摩根律" class="headerlink" title="德·摩根律"></a>德·摩根律</h4><p>$\overline{A\bigcup B}=\overline{A}\bigcap \overline{B}$<br>$\overline{A\bigcap B}=\overline{A}\bigcup \overline{B}$</p>
+<h2 id="频率与概率"><a href="#频率与概率" class="headerlink" title="频率与概率"></a>频率与概率</h2><h3 id="频率"><a href="#频率" class="headerlink" title="频率"></a>频率</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>相同条件下进行了n次试验，在这n次试验当中，事件A发生的频率$n_A$称为事件A的频数，比值$f_n(A)=\frac{n_A}{n}$称为事件A发生的频率。</p>
+<h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><ul>
+<li>$0\leq f_n(A)\leq 1$</li>
+<li>$f_n(S)=1$</li>
+<li>有限可加性：若$A_1,A_2,\ldots,a_k$是两两互不相容的事件，则$f_n(A_1\bigcup A_2\bigcup\ldots\bigcup A_k)=f_n(A_1)+f_n(A_2)+\ldots+f_n(A_k)$</li>
+</ul>
+<h3 id="概率"><a href="#概率" class="headerlink" title="概率"></a>概率</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>设E是随机试验，S是它的样本空间，对于E的每一事件A赋予一个实数$P(A)$，称为事件A的概率，如果集合函数$P(\cdot)$满足下列条件：</p>
+<h5 id="非负性"><a href="#非负性" class="headerlink" title="非负性"></a>非负性</h5><p>对于每一事件A，有$P(A)\ge 0$</p>
+<h5 id="规范性"><a href="#规范性" class="headerlink" title="规范性"></a>规范性</h5><p>对于必然事件S，有$P(S)=1$</p>
+<h5 id="可列可加性"><a href="#可列可加性" class="headerlink" title="可列可加性"></a>可列可加性</h5><p>设$A_1,A_2,\ldots$是两两互不相容的事件，则$P(A_1\bigcup A_2\bigcup\ldots)=P(A_1)+P(A_2)+\ldots$</p>
+<h4 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h4><ul>
+<li>$P(\varnothing)=0$</li>
+<li>有限可加性：$P(A_1\bigcup A_2\bigcup\ldots\bigcup A_n)=P(A_1)+P(A_2)+\ldots+P(A_n)$，可由上一条性质和可列可加性推出。</li>
+<li>若$A\subset B$，则$P(B-A)=P(B)-P(A)\ge 0$</li>
+<li>$P(A)\le 1$</li>
+<li>逆事件的概率：$P(\overline{A})=1-P(A)$</li>
+<li>加法公式：$P(A\bigcup B)=P(A)+P(B)-P(AB)$，推广到三元：$P(A\bigcup B\bigcup C)=P(A)+P(B)+P(C)-P(AB)-P(BC)-P(AC)+P(ABC)$</li>
+<li>$P(A-B)=P(A)-P(AB)$</li>
+<li>$P(A\overline{B})=P(A)-P(AB)$</li>
+<li>$P(A)=P(AB)+P(A\overline{B})$</li>
+<li>$P(A\bigcup B)=P(A)+P(\overline{A}B)=P(AB)+P(A\overline{B})+P(\overline{A}B)$</li>
+</ul>
+<h2 id="等可能概型（古典概型）"><a href="#等可能概型（古典概型）" class="headerlink" title="等可能概型（古典概型）"></a>等可能概型（古典概型）</h2><p>具备以下两个特点的试验被称作等可能概型（古典概型）：</p>
+<ul>
+<li>试验的样本空间只包含有限个元素</li>
+<li>试验中每个基本事件发生的可能性相同</li>
+</ul>
+<h3 id="古典概型计算公式"><a href="#古典概型计算公式" class="headerlink" title="古典概型计算公式"></a>古典概型计算公式</h3><p>$P(A)=\frac{A包含的基本事件数}{S包含的事件数}$</p>
+<h3 id="实际推断原理"><a href="#实际推断原理" class="headerlink" title="实际推断原理"></a>实际推断原理</h3><p>概率很小的事件在一次试验中实际上几乎是不发生的。</p>
+<h2 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h2><h3 id="条件概率-1"><a href="#条件概率-1" class="headerlink" title="条件概率"></a>条件概率</h3><p>$P(B|A)=\frac{P(AB)}{P(A)}$,表示$A$发生的条件下，$B$发生的概率。<br>条件概率$P(\centerdot |B)$满足概率的所有性质，例如：</p>
+<ul>
+<li>$P({ {\overline{A} }<em>{1} }|B)=1-P({ {A}</em>{1} }|B)$</li>
+<li>$P({ {A}<em>{1} }\bigcup { {A}</em>{2} }|B)=P({ {A}<em>{1} }|B)+P({ {A}</em>{2} }|B)-P({ {A}<em>{1} }{ {A}</em>{2} }|B)$</li>
+<li>$P({ {A}<em>{1} }{ {A}</em>{2} }|B)=P({ {A}<em>{1} }|B)P({ {A}</em>{2} }|{ {A}_{1} }B)$</li>
+</ul>
+<h4 id="非负性-1"><a href="#非负性-1" class="headerlink" title="非负性"></a>非负性</h4><p>对于每一事件$B$，有$P(B|A)\ge 0$</p>
+<h4 id="规范性-1"><a href="#规范性-1" class="headerlink" title="规范性"></a>规范性</h4><p>对于必然事件$S$，有$P(S|A)=1$</p>
+<h4 id="可列可加性-1"><a href="#可列可加性-1" class="headerlink" title="可列可加性"></a>可列可加性</h4><p>$P(\underset{i=1}{\overset{\infty}{\mathop{\bigcup } } },{ {B}<em>{i} }|A)=\sum</em>{i=1}^\infty P(B_i|A)$</p>
+<h3 id="乘法定理"><a href="#乘法定理" class="headerlink" title="乘法定理"></a>乘法定理</h3><p>$P({ {A}<em>{1} }{ {A}</em>{2} })=P({ {A}<em>{1} })P({ {A}</em>{2} }|{ {A}<em>{1} })=P({ {A}</em>{2} })P({ {A}<em>{1} }|{ {A}</em>{2} })$<br>$P({ {A}<em>{1} }{ {A}</em>{2} }\cdots { {A}<em>{n} })=P({ {A}</em>{1} })P({ {A}<em>{2} }|{ {A}</em>{1} })P({ {A}<em>{3} }|{ {A}</em>{1} }{ {A}<em>{2} })\cdots P({ {A}</em>{n} }|{ {A}<em>{1} }{ {A}</em>{2} }\cdots { {A}_{n-1} })$</p>
+<h3 id="全概率公式和贝叶斯公式"><a href="#全概率公式和贝叶斯公式" class="headerlink" title="全概率公式和贝叶斯公式"></a>全概率公式和贝叶斯公式</h3><h4 id="全概率公式"><a href="#全概率公式" class="headerlink" title="全概率公式"></a>全概率公式</h4><p>$P(A)=\sum\limits_{i=1}^{n}{P(A|{ {B}<em>{i} })P({ {B}</em>{i} }),{ {B}<em>{i} }{ {B}</em>{j} } }=\varnothing ,i\ne j,\underset{i=1}{\overset{n}{\mathop{\bigcup } } },{ {B}_{i} }=\Omega$</p>
+<h4 id="Bayes（贝叶斯）公式"><a href="#Bayes（贝叶斯）公式" class="headerlink" title="Bayes（贝叶斯）公式"></a>Bayes（贝叶斯）公式</h4><p>$P({ {B}<em>{j} }|A)=\frac{P(A|{ {B}</em>{j} })P({ {B}<em>{j} })}{\sum\limits</em>{i=1}^{n}{P(A|{ {B}<em>{i} })P({ {B}</em>{i} })} },j=1,2,\cdots ,n$<br>上述公式中事件${ {B}_{i} }$的个数可为可列个。</p>
+<h2 id="独立性"><a href="#独立性" class="headerlink" title="独立性"></a>独立性</h2><p>若干个事件，如果对于其中任意个事件，它们的积事件的概率都等于各事件概率的积，则称这几个事件相互独立。</p>
+<ul>
+<li>$A$与$B$相互独立$\Leftrightarrow P(AB)=P(A)P(B)$</li>
+<li>$A$，$B$，$C$两两独立$\Leftrightarrow P(AB)=P(A)P(B)$;$P(BC)=P(B)P(C)$;$P(AC)=P(A)P(C)$;</li>
+<li>$A$，$B$，$C$相互独立$\Leftrightarrow P(AB)=P(A)P(B)$;$P(BC)=P(B)P(C)$;$P(AC)=P(A)P(C)$;$P(ABC)=P(A)P(B)P(C)$</li>
+</ul>
+<h3 id="独立重复试验"><a href="#独立重复试验" class="headerlink" title="独立重复试验"></a>独立重复试验</h3><p>将某试验独立重复$n$次，若每次试验中事件A发生的概率为$p$，则$n$次试验中$A$发生$k$次的概率为：$P{X=k}=C_{n}^{k}{ {p}^{k} }{ {(1-p)}^{n-k} }$</p>
+<h3 id="性质-2"><a href="#性质-2" class="headerlink" title="性质"></a>性质</h3><ul>
+<li>若${ {A}<em>{1} },{ {A}</em>{2} },\cdots ,{ {A}<em>{n} }$相互独立，则$P(\bigcap\limits</em>{i=1}^{n}{ { {A}<em>{i} } })=\prod\limits</em>{i=1}^{n}{P({ {A}<em>{i} })},$<br>$P(\bigcup\limits</em>{i=1}^{n}{ { {A}<em>{i} } })=\prod\limits</em>{i=1}^{n}{(1-P({ {A}_{i} }))}$</li>
+<li>若${ {A}<em>{1} },{ {A}</em>{2} },\cdots ,{ {A}<em>{m} },{ {B}</em>{1} },{ {B}<em>{2} },\cdots ,{ {B}</em>{n} }$相互独立，则$f({ {A}<em>{1} },{ {A}</em>{2} },\cdots ,{ {A}<em>{m} })$与$g({ {B}</em>{1} },{ {B}<em>{2} },\cdots ,{ {B}</em>{n} })$也相互独立，其中$f(\centerdot ),g(\centerdot )$分别表示对相应事件做任意事件运算后所得的事件，另外，概率为1（或0）的事件与任何事件相互独立。</li>
+</ul>
+<h3 id="互斥、互逆与独立性之间的关系"><a href="#互斥、互逆与独立性之间的关系" class="headerlink" title="互斥、互逆与独立性之间的关系"></a>互斥、互逆与独立性之间的关系</h3><p>$A$与$B$互逆$\Rightarrow$ $A$与$B$互斥，但反之不成立，$A$与$B$互斥（或互逆）且均非零概率事件$\Rightarrow$ $A$与$B$不独立。</p>
+<h1 id="随机变量及其分布"><a href="#随机变量及其分布" class="headerlink" title="随机变量及其分布"></a>随机变量及其分布</h1><h2 id="随机变量"><a href="#随机变量" class="headerlink" title="随机变量"></a>随机变量</h2><p>设随机试验的样本空间为$S={e}$，称定义在样本空间$S$上的实值单值函数$X=X(e)$为随机变量。</p>
+<h2 id="离散型随机变量及其分布律"><a href="#离散型随机变量及其分布律" class="headerlink" title="离散型随机变量及其分布律"></a>离散型随机变量及其分布律</h2><p>取值有限或可列无限的随机变量称为<strong>离散型随机变量</strong>。<br>设X的所有取值为$x_k(k=1,2,\ldots)$，称X取各个事件的概率$P{X=x_k}=p_k,k=1,2,\ldots$为离散型随机变量X的分布律，也可以写成表格形式：</p>
+<table>
+<thead>
+<tr>
+<th>$X$</th>
+<th>$x_1$</th>
+<th>$x_2$</th>
+<th>$\ldots$</th>
+<th>$x_n$</th>
+<th>$\ldots$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$p_k$</td>
+<td>$p_1$</td>
+<td>$p_2$</td>
+<td>$\ldots$</td>
+<td>$p_n$</td>
+<td>$\ldots$</td>
+</tr>
+</tbody></table>
+<p>其中，$p_k$满足：</p>
+<ul>
+<li>$p_k\ge 0,k=1,2,\ldots$</li>
+<li>$\sum_{k=1}^\infty p_k=1$</li>
+</ul>
+<h3 id="0-1分布（两点分布）"><a href="#0-1分布（两点分布）" class="headerlink" title="0-1分布（两点分布）"></a>0-1分布（两点分布）</h3><p>$P{X=k} = p^{k}{(1 - p)}^{1 - k},k = 0,1$，则称X服从以p为参数的0-1分布（两点分布）</p>
+<h3 id="伯努利试验、二项分布"><a href="#伯努利试验、二项分布" class="headerlink" title="伯努利试验、二项分布"></a>伯努利试验、二项分布</h3><h4 id="Binomial-Distribution（二项分布）"><a href="#Binomial-Distribution（二项分布）" class="headerlink" title="Binomial Distribution（二项分布）"></a>Binomial Distribution（二项分布）</h4><p>背景：n重Bernoulli 试验中，每次试验感兴趣的事件A 在 n 次试验中发生的次数 —— X是一离散型随机变量。<br>若$P(A)=p$,则$P_n(k)=P{X=k}=C_n^kp^k(1-p)^{n-k},k=0,1\ldots n$称X服从参数为$n, p$的二项分布，记作$X\sim B(n,p)$<br>特别地，$0 – 1$分布是$n=1$的二项分布.</p>
+<h4 id="Poisson-（泊松）分布"><a href="#Poisson-（泊松）分布" class="headerlink" title="Poisson （泊松）分布"></a>Poisson （泊松）分布</h4><p>背景：已知某事发生速率为每单位时间b次，观察时间为T时间单位，X为该观察时间内发生该事的总次数$\lambda=bT$<br>设随机变量X的所有可能值是全体非负整数，若$P{X=k}=e^{-\lambda}\frac{\lambda^k}{k!},k=0,1,\ldots$其中$\lambda&gt;0$是常数，则称 X 服从参数为$\lambda$的Poisson 分布，记作$\pi(\lambda)$或$P(\lambda)$</p>
+<h5 id="泊松定理"><a href="#泊松定理" class="headerlink" title="泊松定理"></a>泊松定理</h5><p>可用于泊松分布逼近二项分布。设随机变量X服从二项分布，其分布律为$P{X=K}=C_n^kp^k(1-p)^{n-k}$,又设$np=\lambda$是常数，则有$\lim_{n\to\infty}P{X=K}=e^{-\lambda}\frac{\lambda^k}{k!}$<br>在实际计算中,当$n\ge 20,p\leq 0.05$时，可用上述公式近似计算；而当$n\ge 100,np\leq 10$时，精度更好。</p>
+<h4 id="几何分布"><a href="#几何分布" class="headerlink" title="几何分布"></a>几何分布</h4><p>在n次伯努利试验中，试验k次才得到第一次成功的机率。<br>$G(p):P{X=k} = {(1 - p)}^{k - 1}p,0 &lt; p &lt; 1,k = 1,2,\cdots,P{X = m + k|X &gt; m} = P{X=k}$</p>
+<h4 id="超几何分布"><a href="#超几何分布" class="headerlink" title="超几何分布"></a>超几何分布</h4><p>设有产品N件，其中次品D件，其余为正品，从中随机地抽取n件。记X为抽到的的次品件数，求X的分布律.<br>此时抽到k件次品的概率为$H(N,M,n):P{X=k} = \frac{C_{M}^{k}C_{N - M}^{n -k} }{C_{N}^{n} },k =0,1,\cdots,min(n,M)$，称X服从超几何分布. 可以证明超几何分布的极限分布就是二项分布.</p>
+<h4 id="负二项分布-Pascal分布"><a href="#负二项分布-Pascal分布" class="headerlink" title="负二项分布(Pascal分布)"></a>负二项分布(Pascal分布)</h4><h4 id="离散均匀分布"><a href="#离散均匀分布" class="headerlink" title="离散均匀分布"></a>离散均匀分布</h4><h2 id="随机变量的分布函数"><a href="#随机变量的分布函数" class="headerlink" title="随机变量的分布函数"></a>随机变量的分布函数</h2><h3 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h3><p>$F(x) = P(X \leq x), - \infty &lt; x &lt; + \infty$</p>
+<h3 id="性质-3"><a href="#性质-3" class="headerlink" title="性质"></a>性质</h3><ul>
+<li>$0 \leq F(x) \leq 1$</li>
+<li>$F(x)$单调不减</li>
+<li>右连续$F(x) = F(x+0)$</li>
+<li>$F( - \infty) = 0,F( + \infty) = 1$</li>
+</ul>
+<h2 id="连续型随机变量及其概率密度"><a href="#连续型随机变量及其概率密度" class="headerlink" title="连续型随机变量及其概率密度"></a>连续型随机变量及其概率密度</h2><p>概率密度$f(x)$非负可积，且:</p>
+<ul>
+<li>$f(x) \geq 0$</li>
+<li>$\int_{- \infty}^{+\infty}{f(x){dx} = 1}$</li>
+<li>$x$为$f(x)$的连续点，则:<br>$f(x) = F’(x)$分布函数$F(x) = \int_{- \infty}^{x}{f(t){dt} }$</li>
+</ul>
+<h3 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h3><p>设连续型随机变量X具有概率密度<br>$p(x)=\begin{cases}\frac{1}{b-a},a\leq x\leq b,\0,其它\end{cases}$则称X在$(a,b)$上服从均匀分布，记作$X\sim U(a,b)$<br>分布函数$F(x)=\begin{cases}0,x&lt;a\ \frac{x-a}{b-a},a\leq x&lt; b\1,x\ge b\end{cases}$</p>
+<h3 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h3><p>设连续型随机变量X具有概率密度<br>$p(X)=\begin{cases}\lambda e^{-\lambda x},x\ge 0,\0,x&lt;0\end{cases}$，其中$\lambda &gt;0$为常数，则称X在$(a,b)$上服从指数分布。<br>分布函数$F(x)=\begin{cases}1-e^{-\frac{x}{\theta}},x&gt;0\0,x\le 0\end{cases}$<br><strong>无记忆性</strong>：$\forall s,t&gt;0$，$P{x&gt;s+t|x&gt;s}=p{x&gt;t}$，即，如果T是某一元件的寿命，已知元件使用了s小时，它总共使用至少s+t小时的条件概率，与从开始使用时算起它使用至少t小时的概率相等。</p>
+<h3 id="正态分布（高斯分布，Gauss）"><a href="#正态分布（高斯分布，Gauss）" class="headerlink" title="正态分布（高斯分布，Gauss）"></a>正态分布（高斯分布，Gauss）</h3><p>设连续型随机变量X具有概率密度<br>$p(X)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2} }$则称X服从参数为$\mu,\sigma$的正态分布或高斯分布，记作$X\sim N(\mu,\sigma^2)$<br>$\mu$是位置参数，即固定$\sigma$，对于不同的$\mu$，对应的f(x)的形状不变化，只是位置不同。<br>$\sigma$是形状参数，即固定$\mu$，对于不同的$\sigma$，对应f(x)位置不变化，只是$\sigma$越小，靠近$\mu$附近取值的概率越大，相应拐点越接近于ox轴。$\sigma$大小与曲线陡峭程度成反比（几何意义），与数据分散程度成正比（数据意义）。</p>
+<h4 id="标准正态分布N-0-1"><a href="#标准正态分布N-0-1" class="headerlink" title="标准正态分布N(0,1)"></a>标准正态分布N(0,1)</h4><p>密度函数$\varphi(x)=\frac{1}{\sqrt{2\pi} }e^{-\frac{x^2}{2} }$是偶函数，其分布函数为$\Phi(x)=\frac{1}{\sqrt{2\pi} }\int_{-\infty}^xe^{-\frac{t^2}{2} },dt$，其值可查表。<br><img src="https://www.mianfeiwendang.com/pic/e18309c08f2600f948bb1837/1-1344-jpg_6_0_______-929-0-0-929.jpg" alt="正态分布表"><br>$\varphi(0) = \frac{1}{\sqrt{2\pi} },\Phi(0) =\frac{1}{2},$ $\Phi( - a) = P(X \leq - a) = 1 - \Phi(a)$<br>$X\sim N\left( \mu,\sigma^{2} \right) \Rightarrow \frac{X -\mu}{\sigma}\sim N\left( 0,1 \right),P(X \leq a) = \Phi(\frac{a -\mu}{\sigma})$</p>
+<h2 id="随机变量的函数的分布"><a href="#随机变量的函数的分布" class="headerlink" title="随机变量的函数的分布"></a>随机变量的函数的分布</h2><ul>
+<li>离散型：$P(X = x_{1}) = p_{i},Y = g(X)$，则: $P(Y = y_{j}) = \sum_{g(x_{i}) = y_{i} }^{}{P(X = x_{i})}$</li>
+<li>连续型：$X\sim f_{X}(x),Y = g(x)$，则:$F_{y}(y) = P(Y \leq y) = P(g(X) \leq y) = \int_{g(x) \leq y}^{}{f_{x}(x)dx}$， $f_{Y}(y) = F’_{Y}(y)$</li>
+<li>离散型随机变量的分布函数为阶梯间断函数；连续型随机变量的分布函数为连续函数，但不一定为处处可导函数。</li>
+<li>存在既非离散也非连续型随机变量。</li>
+</ul>
+<h1 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h1><h2 id="二维随机变量"><a href="#二维随机变量" class="headerlink" title="二维随机变量"></a>二维随机变量</h2><p>由两个随机变量构成的随机向量$(X,Y)$， 联合分布为$F(x,y) = P{X \le x,Y \le y}$<br>$P{ X = x_{i},Y = y_{j}} = p_{ {ij} };i,j =1,2,\cdots$<br>$f(x,y) \geq 0$<br>$\int_{- \infty}^{+ \infty}{\int_{- \infty}^{+ \infty}{f(x,y)dxdy} } = 1$<br>$F(x,y) = \int_{- \infty}^{x}{\int_{- \infty}^{y}{f(u,v)dudv} }$</p>
+<h2 id="边缘分布"><a href="#边缘分布" class="headerlink" title="边缘分布"></a>边缘分布</h2><p>$p_{i \cdot} = \sum_{j = 1}^{\infty}p_{ {ij} },i =1,2,\cdots$ $p_{\cdot j} = \sum_{i}^{\infty}p_{ {ij} },j = 1,2,\cdots$<br>$f_{X}\left( x \right) = \int_{- \infty}^{+ \infty}{f\left( x,y \right){dy} }$ $f_{Y}(y) = \int_{- \infty}^{+ \infty}{f(x,y)dx}$</p>
+<h2 id="条件分布"><a href="#条件分布" class="headerlink" title="条件分布"></a>条件分布</h2><p>$P{ X = x_{i}|Y = y_{j}} = \frac{p_{ {ij} } }{p_{\cdot j} }$<br>$P{ Y = y_{j}|X = x_{i}} = \frac{p_{ {ij} } }{p_{i \cdot} }$<br>$f_{X|Y}\left( x \middle| y \right) = \frac{f\left( x,y \right)}{f_{Y}\left( y \right)}$<br>$f_{Y|X}(y|x) = \frac{f(x,y)}{f_{X}(x)}$</p>
+<h2 id="相互独立的随机变量"><a href="#相互独立的随机变量" class="headerlink" title="相互独立的随机变量"></a>相互独立的随机变量</h2><p>若$P{X\le x,Y\le y}=P{X\le x}P{Y\le y}$，即$F(x,y)=F_X(x)F_Y(y)$，则称随机变量$X,Y$是相互独立的。<br>对于连续型随机变量，即$f(x,y)=f_X(x)f_Y(y)$在平面上几乎（除去面积为0的集合外）处处成立。<br>对于离散型随机变量，即$P{X=x_i,Y=y_i}=P{X=x_i}P{Y=y_i}$。<br>对于二维正态随机变量$(X,Y)$，$X,Y$相互独立的充要条件是参数$\rho=0$。</p>
+<h2 id="两个随机变量的函数的分布"><a href="#两个随机变量的函数的分布" class="headerlink" title="两个随机变量的函数的分布"></a>两个随机变量的函数的分布</h2><h3 id="二维均匀分布"><a href="#二维均匀分布" class="headerlink" title="二维均匀分布"></a>二维均匀分布</h3><p>$(x,y) \sim U(D)$ ,$f(x,y) = \begin{cases} \frac{1}{S(D)},(x,y) \in D \   0,其他  \end{cases}$</p>
+<h3 id="二维正态分布"><a href="#二维正态分布" class="headerlink" title="二维正态分布"></a>二维正态分布</h3><p>$(X,Y)\sim N(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2},\rho)$,$(X,Y)\sim N(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2},\rho)$<br>$f(x,y) = \frac{1}{2\pi\sigma_{1}\sigma_{2}\sqrt{1 - \rho^{2} } }.\exp\left{ \frac{- 1}{2(1 - \rho^{2})}\lbrack\frac{ {(x - \mu_{1})}^{2} }{\sigma_{1}^{2} } - 2\rho\frac{(x - \mu_{1})(y - \mu_{2})}{\sigma_{1}\sigma_{2} } + \frac{ {(y - \mu_{2})}^{2} }{\sigma_{2}^{2} }\rbrack \right}$</p>
+<h2 id="随机变量的独立性和相关性"><a href="#随机变量的独立性和相关性" class="headerlink" title="随机变量的独立性和相关性"></a>随机变量的独立性和相关性</h2><p>$X$和$Y$的相互独立:$\Leftrightarrow F\left( x,y \right) = F_{X}\left( x \right)F_{Y}\left( y \right)$:<br>$\Leftrightarrow p_{ {ij} } = p_{i \cdot} \cdot p_{\cdot j}$（离散型）<br>$\Leftrightarrow f\left( x,y \right) = f_{X}\left( x \right)f_{Y}\left( y \right)$（连续型）<br>$X$和$Y$的相关性：</p>
+<p>相关系数$\rho_{ {XY} } = 0$时，称$X$和$Y$不相关，<br>否则称$X$和$Y$相关</p>
+<h2 id="两个随机变量的函数的分布-1"><a href="#两个随机变量的函数的分布-1" class="headerlink" title="两个随机变量的函数的分布"></a>两个随机变量的函数的分布</h2><h3 id="Z-X-Y-的分布"><a href="#Z-X-Y-的分布" class="headerlink" title="$Z=X+Y$的分布"></a>$Z=X+Y$的分布</h3><p>$f_{X+Y}(z)=\int_{-\infty}^\infty f(x,z-x)dx$</p>
+<h3 id="Z-frac-Y-X-的分布、-Z-XY-的分布"><a href="#Z-frac-Y-X-的分布、-Z-XY-的分布" class="headerlink" title="$Z=\frac{Y}{X}$的分布、$Z=XY$的分布"></a>$Z=\frac{Y}{X}$的分布、$Z=XY$的分布</h3><p>$f_{Y/X}(z)=\int_{-\infty}^\infty |x|f(x,xz)dx$<br>$f_{XY}(z)=\int_{-\infty}^\infty \frac{1}{|x|}f(x,\frac{z}{x})dx$</p>
+<h3 id="M-max-X-Y-的分布、-N-min-X-Y-的分布"><a href="#M-max-X-Y-的分布、-N-min-X-Y-的分布" class="headerlink" title="$M=\max{X,Y}$的分布、$N=\min{X,Y}$的分布"></a>$M=\max{X,Y}$的分布、$N=\min{X,Y}$的分布</h3><p>$F_{max}(z)=\Pi F_{x_i}(z)$<br>$F_{min}(z)=1-\Pi (1-F_{x_i}(z))$</p>
+<h3 id="离散型"><a href="#离散型" class="headerlink" title="离散型"></a>离散型</h3><p>$P\left( X = x_{i},Y = y_{i} \right) = p_{ {ij} },Z = g\left( X,Y \right)$ 则：<br>$P(Z = z_{k}) = P\left{ g\left( X,Y \right) = z_{k} \right} = \sum_{g\left( x_{i},y_{i} \right) = z_{k} }^{}{P\left( X = x_{i},Y = y_{j} \right)}$</p>
+<h3 id="连续型"><a href="#连续型" class="headerlink" title="连续型"></a>连续型</h3><p>$\left( X,Y \right) \sim f\left( x,y \right),Z = g\left( X,Y \right)$<br>则：<br>$F_{z}\left( z \right) = P\left{ g\left( X,Y \right) \leq z \right} = \iint_{g(x,y) \leq z}^{}{f(x,y)dxdy}$，$f_{z}(z) = F’_{z}(z)$</p>
+<h3 id="重要公式与结论"><a href="#重要公式与结论" class="headerlink" title="重要公式与结论"></a>重要公式与结论</h3><p>$f_{X}(x) = \int_{- \infty}^{+ \infty}{f(x,y)dy,}$<br>$f_{Y}(y) = \int_{- \infty}^{+ \infty}{f(x,y)dx}$<br>$P\left{ \left( X,Y \right) \in D \right} = \iint_{D}^{}{f\left( x,y \right){dxdy} }$<br>若$(X,Y)$服从二维正态分布$N(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2},\rho)$<br>则有：</p>
+<ul>
+<li>$X\sim N\left( \mu_{1},\sigma_{1}^{2} \right),Y\sim N(\mu_{2},\sigma_{2}^{2}).$</li>
+<li>$X$与$Y$相互独立$\Leftrightarrow \rho = 0$，即$X$与$Y$不相关。</li>
+<li>$C_{1}X + C_{2}Y\sim N(C_{1}\mu_{1} + C_{2}\mu_{2},C_{1}^{2}\sigma_{1}^{2} + C_{2}^{2}\sigma_{2}^{2} + 2C_{1}C_{2}\sigma_{1}\sigma_{2}\rho)$</li>
+<li>${\ X}$关于$Y=y$的条件分布为： $N(\mu_{1} + \rho\frac{\sigma_{1} }{\sigma_{2} }(y - \mu_{2}),\sigma_{1}^{2}(1 - \rho^{2}))$</li>
+<li>$Y$关于$X = x$的条件分布为： $N(\mu_{2} + \rho\frac{\sigma_{2} }{\sigma_{1} }(x - \mu_{1}),\sigma_{2}^{2}(1 - \rho^{2}))$</li>
+</ul>
+<p>若$X$与$Y$独立，且分别服从$N(\mu_{1},\sigma_{1}^{2}),N(\mu_{1},\sigma_{2}^{2}),$<br>则：$\left( X,Y \right)\sim N(\mu_{1},\mu_{2},\sigma_{1}^{2},\sigma_{2}^{2},0),$</p>
+<p>$C_{1}X + C_{2}Y\sim{\ }N(C_{1}\mu_{1} + C_{2}\mu_{2},C_{1}^{2}\sigma_{1}^{2} C_{2}^{2}\sigma_{2}^{2}).$</p>
+<p>若$X$与$Y$相互独立，$f\left( x \right)$和$g\left( x \right)$为连续函数， 则$f\left( X \right)$和$g(Y)$也相互独立。</p>
+<h1 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h1><h2 id="数学期望"><a href="#数学期望" class="headerlink" title="数学期望"></a>数学期望</h2><p>数学期望简称期望，又称均值。数学期望完全由概率分布决定。</p>
+<h3 id="离散型-1"><a href="#离散型-1" class="headerlink" title="离散型"></a>离散型</h3><p>若离散型随机变量$X$的分布律为$P\left{ X = x_{i} \right} = p_{i}$ ，且级数$E(X) = \sum_{i}^{}{x_{i}p_{i} }$绝对收敛，则称$E(x)$为随机变量$X$的数学期望。</p>
+<h3 id="连续型-1"><a href="#连续型-1" class="headerlink" title="连续型"></a>连续型</h3><p>$X\sim f(x),E(X) = \int_{- \infty}^{+ \infty}{xf(x)dx}$</p>
+<h3 id="性质-4"><a href="#性质-4" class="headerlink" title="性质"></a>性质</h3><ul>
+<li>$E(C) = C,E\lbrack E(X)\rbrack = E(X)$</li>
+<li>$E(C_{1}X + C_{2}Y) = C_{1}E(X) + C_{2}E(Y)$</li>
+<li>若$X$和$Y$独立，则$E(XY) = E(X)E(Y)$</li>
+<li>$\left\lbrack E(XY) \right\rbrack^{2} \leq E(X^{2})E(Y^{2})$</li>
+</ul>
+<h3 id="随机变量函数的数学期望"><a href="#随机变量函数的数学期望" class="headerlink" title="随机变量函数的数学期望"></a>随机变量函数的数学期望</h3><p>对于函数$Y = g(x)$</p>
+<h4 id="X-为离散型"><a href="#X-为离散型" class="headerlink" title="$X$为离散型"></a>$X$为离散型</h4><p>$P{ X = x_{i}} = p_{i},E(Y) = \sum_{i}^{}{g(x_{i})p_{i} }$；</p>
+<h4 id="X-为连续型"><a href="#X-为连续型" class="headerlink" title="$X$为连续型"></a>$X$为连续型</h4><p>$X\sim f(x),E(Y) = \int_{- \infty}^{+ \infty}{g(x)f(x)dx}$<br>扩展到多维函数：$Z = g(X,Y)$;$\left( X,Y \right)\sim P{ X = x_{i},Y = y_{j}} = p_{ {ij} }$;$E(Z) = \sum_{i}^{}{\sum_{j}^{}{g(x_{i},y_{j})p_{ {ij} } } }$ $\left( X,Y \right)\sim f(x,y)$;$E(Z) = \int_{- \infty}^{+ \infty}{\int_{- \infty}^{+ \infty}{g(x,y)f(x,y)dxdy} }$</p>
+<h2 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h2><p>$D(X) = E\left\lbrack X - E(X) \right\rbrack^{2} = E(X^{2}) - \left\lbrack E(X) \right\rbrack^{2}$，有时也记作$Var(X)$。<br>同时引入标准差（均方差）$\sigma (x)=\sqrt{D(X)}$。</p>
+<h3 id="离散型-2"><a href="#离散型-2" class="headerlink" title="离散型"></a>离散型</h3><p>$D(X) = \sum_{i}^{}{\left\lbrack x_{i} - E(X) \right\rbrack^{2}p_{i} }$</p>
+<h3 id="连续型-2"><a href="#连续型-2" class="headerlink" title="连续型"></a>连续型</h3><p>$D(X) = {\int_{- \infty}^{+ \infty}\left\lbrack x - E(X) \right\rbrack}^{2}f(x)dx$</p>
+<h3 id="性质-5"><a href="#性质-5" class="headerlink" title="性质"></a>性质</h3><ul>
+<li>$\ D(X) = E(X^{2}) - E^{2}(X)$</li>
+<li>$\ D(C) = 0,D\lbrack E(X)\rbrack = 0,D\lbrack D(X)\rbrack = 0$<ul>
+<li>$\ D\left( C_{1}X + C_{2} \right) = C_{1}^{2}D\left( X \right)$</li>
+</ul>
+</li>
+<li>$X$与$Y$相互独立，则$D(X \pm Y) = D(X) + D(Y)$</li>
+<li>$\ D(X) = 0 \Leftrightarrow P\left{ X = C \right} = 1$</li>
+<li>$\ D\left( X \right) &lt; E\left( X - C \right)^{2},C \neq E\left( X \right)$</li>
+</ul>
+<h3 id="Chebyshev（切比雪夫）不等式"><a href="#Chebyshev（切比雪夫）不等式" class="headerlink" title="Chebyshev（切比雪夫）不等式"></a>Chebyshev（切比雪夫）不等式</h3><p>若随机变量$X$满足$E(X)=\mu$，方差$D(x)=\sigma^2$，则对于任意正数$\varepsilon$，有切比雪夫不等式$P{|X-\mu|\ge\varepsilon}\leq\frac{\sigma^2}{\varepsilon^2}$成立。</p>
+<h2 id="协方差及相关系数"><a href="#协方差及相关系数" class="headerlink" title="协方差及相关系数"></a>协方差及相关系数</h2><p>$Cov(X,Y) = E\left\lbrack (X - E(X)(Y - E(Y)) \right\rbrack$称为随机变量$X,Y$的协方差，$\rho_{ {XY} } = \frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)} }$称为他们的相关系数。</p>
+<h3 id="性质-6"><a href="#性质-6" class="headerlink" title="性质"></a>性质</h3><ul>
+<li>$\ Cov(X,Y) = Cov(Y,X)$</li>
+<li>$\ Cov(aX,bY) = abCov(Y,X)$</li>
+<li>$\ Cov(X_{1} + X_{2},Y) = Cov(X_{1},Y) + Cov(X_{2},Y)$</li>
+<li>$\ \left| \rho\left( X,Y \right) \right| \leq 1$</li>
+<li>$\ \rho\left( X,Y \right) = 1 \Leftrightarrow P\left( Y = aX + b \right) = 1$ ，其中$a &gt; 0$</li>
+<li>$\rho\left( X,Y \right) = - 1 \Leftrightarrow P\left( Y = aX + b \right) = 1$，其中$a &lt; 0$</li>
+<li>一般有 $D(X \pm Y) = D(X) + D(Y) \pm 2Cov(X,Y) = D(X) + D(Y) \pm 2\rho\sqrt{D(X)}\sqrt{D(Y)}$</li>
+</ul>
+<h3 id="重要公式与结论-1"><a href="#重要公式与结论-1" class="headerlink" title="重要公式与结论"></a>重要公式与结论</h3><ul>
+<li>$\ Cov(X,Y) = E(XY) - E(X)E(Y)$</li>
+<li>$\left| \rho\left( X,Y \right) \right| \leq 1,$且 $\rho\left( X,Y \right) = 1 \Leftrightarrow P\left( Y = aX + b \right) = 1$，其中$a &gt; 0$</li>
+<li>$\rho\left( X,Y \right) = - 1 \Leftrightarrow P\left( Y = aX + b \right) = 1$，其中$a &lt; 0$</li>
+<li>下面5个条件互为充要条件：$\rho(X,Y) = 0$ $\Leftrightarrow Cov(X,Y) = 0$ $\Leftrightarrow E(X,Y) = E(X)E(Y)$ $\Leftrightarrow D(X + Y) = D(X) + D(Y)$ $\Leftrightarrow  D(X - Y) = D(X) + D(Y)$。注：$X$与$Y$独立为上述5个条件中任何一个成立的充分条件，但非必要条件。</li>
+</ul>
+<h2 id="矩、协方差矩阵（待补充）"><a href="#矩、协方差矩阵（待补充）" class="headerlink" title="矩、协方差矩阵（待补充）"></a>矩、协方差矩阵（待补充）</h2><p>$E(X^{k})$称为$X$的$k$阶原点矩，简称$k$阶矩。<br>$E\left{ {\lbrack X - E(X)\rbrack}^{k} \right},k=2,3,\ldots$称为$X$的$k$阶中心矩。<br>$E(X^{k}Y^{l})$称为$X,Y$的$k+l$阶混合矩。<br>$E\left{ {\lbrack X - E(X)\rbrack}^{k}  {\lbrack Y - E(Y)\rbrack}^{l}\right},k,l=2,3,\ldots$称为$X,Y$的$k+l$阶混合中心矩。<br>显然，$E(X)$是$X的一阶原点矩，$D(X)$是$X的二阶中心矩，$Cov(X,Y)$是$X,Y$的二阶混合中心矩。</p>
+<h1 id="大数定律及中心极限定理"><a href="#大数定律及中心极限定理" class="headerlink" title="大数定律及中心极限定理"></a>大数定律及中心极限定理</h1><h2 id="大数定律"><a href="#大数定律" class="headerlink" title="大数定律"></a>大数定律</h2><h3 id="辛钦大数定理（弱大数定理）"><a href="#辛钦大数定理（弱大数定理）" class="headerlink" title="辛钦大数定理（弱大数定理）"></a>辛钦大数定理（弱大数定理）</h3><p>设随机变量$X_1,X_2,\ldots,X_n,\ldots$相互独立，服从同一分布且具有数学期望$E(X_k)=\mu,(k=1,2,\ldots)$，则序列$\overline{X}=\frac{1}{n}\sum_{k=1}^nX_k$依概率收敛于$\mu$。</p>
+<h3 id="伯努利大数定理"><a href="#伯努利大数定理" class="headerlink" title="伯努利大数定理"></a>伯努利大数定理</h3><p>伯努利大数定理是辛钦大数定理的一个重要推论，它表明：试验次数很大时，可用事件的频率代替事件的概率。<br>设$f_A$是n次独立重复试验中事件A发生的次数，$p$是事件A在每次试验中发生的概率，则对于任意的正数$\varepsilon$，有$\lim_{n\to\infty}P{|\frac{f_A}{n}-p|&lt;\varepsilon}=1$，$\lim_{n\to\infty}P{|\frac{f_A}{n}-p|\ge\varepsilon}=0$。</p>
+<h2 id="中心极限定理"><a href="#中心极限定理" class="headerlink" title="中心极限定理"></a>中心极限定理</h2><h3 id="独立同分布的中心极限定理"><a href="#独立同分布的中心极限定理" class="headerlink" title="独立同分布的中心极限定理"></a>独立同分布的中心极限定理</h3><p>设随机变量$X_1,X_2,\ldots,X_n,\ldots$相互独立，服从同一分布且具有数学期望和方差$E(X_k)=\mu,D(X_k)=\sigma^2&gt;0,(k=1,2,\ldots)$，则随机变量之和$\sum_{k=1}^nX_k$的标准化变量$Y_n=\frac{\sum_{k=1}^nX_k-n\mu}{\sqrt{n}\sigma}$的分布函数$F_n(x)$对任意x满足$\lim_{n\to\infty}F_n(x)=\Phi(x)$。<br>这就是说，n足够大的时候，近似地有$\frac{\sum_{k=1}^nX_k-n\mu}{\sqrt{n}\sigma}\sim N(0,1)$或$\overline{X}~N(\mu,\frac{\sigma^2}{n})$</p>
+<h3 id="Lyapunov（李雅普诺夫）定理"><a href="#Lyapunov（李雅普诺夫）定理" class="headerlink" title="Lyapunov（李雅普诺夫）定理"></a>Lyapunov（李雅普诺夫）定理</h3><p>设随机变量$X_1,X_2,\ldots,X_n,\ldots$相互独立，具有数学期望和方差$E(X_k)=\mu_k,D(X_k)=\sigma_k^2&gt;0,(k=1,2,\ldots)$，记$B_n=\sum_{k=1}^n\sigma_k^2$，若存在正数$\delta$，使得当$n\to\infty$时，$\frac{1}{B_n^{2+\delta}}\sum_{k=1}^nE{|X_k-\mu_k|^{2+\delta}}\to 0$，则随机化变量之和$\sum_{k=1}^nX_k$的标准化变量$Z_n=\frac{\sum_{k=1}^nX_k-\sum_{k=1}^n\mu_k}{B_n}$的分布函数$F_n(x)$对于任意x满足$\lim_{n\to\infty}F_n(x)=\Phi(x)$。<br>该定理表明，n足够大的时候，近似地有$Z_n\sim N(0,1)$。</p>
+<h3 id="De-Moivre-Laplace（棣莫弗-拉普拉斯）定理"><a href="#De-Moivre-Laplace（棣莫弗-拉普拉斯）定理" class="headerlink" title="De Moivre-Laplace（棣莫弗-拉普拉斯）定理"></a>De Moivre-Laplace（棣莫弗-拉普拉斯）定理</h3><p>独立同分布的中心极限定理的特殊情况，设随机变量$\eta_n(n=1,2,\ldots)$服从参数为$n,p(0 &lt; p &lt; 1) $的二项分布，则对于任意x，有$\lim_{n\to\infty}P{\frac{\eta_n-np}{\sqrt{np(1-p)}}\leq x}=\Phi(x)$。</p>
+<h1 id="样本及抽样分布"><a href="#样本及抽样分布" class="headerlink" title="样本及抽样分布"></a>样本及抽样分布</h1><h2 id="随机样本"><a href="#随机样本" class="headerlink" title="随机样本"></a>随机样本</h2><h3 id="总体"><a href="#总体" class="headerlink" title="总体"></a>总体</h3><p>研究对象的全体，它是一个随机变量，用$X$表示。</p>
+<h3 id="个体"><a href="#个体" class="headerlink" title="个体"></a>个体</h3><p>组成总体的每个基本元素。</p>
+<h3 id="简单随机样本"><a href="#简单随机样本" class="headerlink" title="简单随机样本"></a>简单随机样本</h3><p>来自总体$X$的$n$个相互独立且与总体同分布的随机变量$X_{1},X_{2}\cdots,X_{n}$，称为容量为$n$的简单随机样本，简称样本。</p>
+<h2 id="直方图和箱线图"><a href="#直方图和箱线图" class="headerlink" title="直方图和箱线图"></a>直方图和箱线图</h2><h3 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h3><h3 id="箱线图"><a href="#箱线图" class="headerlink" title="箱线图"></a>箱线图</h3><h4 id="样本分位数"><a href="#样本分位数" class="headerlink" title="样本分位数"></a>样本分位数</h4><p>若$P(X \leq x_{\alpha}) = \alpha,$则称$x_{\alpha}$为$X$的$\alpha$分位数</p>
+<h2 id="抽样分布"><a href="#抽样分布" class="headerlink" title="抽样分布"></a>抽样分布</h2><h3 id="统计量"><a href="#统计量" class="headerlink" title="统计量"></a>统计量</h3><p>设$X_{1},X_{2}\cdots,X_{n},$是来自总体$X$的一个样本，$g(X_{1},X_{2}\cdots,X_{n})$）是样本的连续函数，且$g()$中不含任何未知参数，则称$g(X_{1},X_{2}\cdots,X_{n})$为统计量。</p>
+<h4 id="样本均值"><a href="#样本均值" class="headerlink" title="样本均值"></a>样本均值</h4><p>$\overline{X} = \frac{1}{n}\sum_{i = 1}^{n}X_{i}$</p>
+<h4 id="样本方差"><a href="#样本方差" class="headerlink" title="样本方差"></a>样本方差</h4><p>$S^{2} = \frac{1}{n - 1}\sum_{i = 1}^{n}{(X_{i} - \overline{X})}^{2}$</p>
+<h4 id="样本矩"><a href="#样本矩" class="headerlink" title="样本矩"></a>样本矩</h4><p>样本$k$阶原点矩：$A_{k} = \frac{1}{n}\sum_{i = 1}^{n}X_{i}^{k},k = 1,2,\cdots$</p>
+<h4 id="样本k阶中心矩"><a href="#样本k阶中心矩" class="headerlink" title="样本k阶中心矩"></a>样本k阶中心矩</h4><p>$B_{k} = \frac{1}{n}\sum_{i = 1}^{n}{(X_{i} - \overline{X})}^{k},k = 1,2,\cdots$</p>
+<h3 id="常用统计量分布"><a href="#常用统计量分布" class="headerlink" title="常用统计量分布"></a>常用统计量分布</h3><h4 id="chi-2-分布"><a href="#chi-2-分布" class="headerlink" title="$\chi^{2}$分布"></a>$\chi^{2}$分布</h4><p>$\chi^{2} = X_{1}^{2} + X_{2}^{2} + \cdots + X_{n}^{2}\sim\chi^{2}(n)$，其中$X_{1},X_{2}\cdots,X_{n},$相互独立，且同服从$N(0,1)$</p>
+<h4 id="t-分布"><a href="#t-分布" class="headerlink" title="$t$分布"></a>$t$分布</h4><p>$T = \frac{X}{\sqrt{Y/n} }\sim t(n)$ ，其中$X\sim N\left( 0,1 \right),Y\sim\chi^{2}(n),$且$X$，$Y$ 相互独立。</p>
+<h4 id="F-分布"><a href="#F-分布" class="headerlink" title="$F$分布"></a>$F$分布</h4><p>$F = \frac{X/n_{1} }{Y/n_{2} }\sim F(n_{1},n_{2})$，其中$X\sim\chi^{2}\left( n_{1} \right),Y\sim\chi^{2}(n_{2}),$且$X$，$Y$相互独立。</p>
+<h4 id="正态总体的常用样本分布"><a href="#正态总体的常用样本分布" class="headerlink" title="正态总体的常用样本分布"></a>正态总体的常用样本分布</h4><p>设$X_{1},X_{2}\cdots,X_{n}$为来自正态总体$N(\mu,\sigma^{2})$的样本，$\overline{X} = \frac{1}{n}\sum_{i = 1}^{n}X_{i},S^{2} = \frac{1}{n - 1}\sum_{i = 1}^{n}{ {(X_{i} - \overline{X})}^{2} }$，则：</p>
+<ul>
+<li>$\overline{X}\sim N\left( \mu,\frac{\sigma^{2} }{n} \right){\ \ }$或者$\frac{\overline{X} - \mu}{\frac{\sigma}{\sqrt{n} } }\sim N(0,1)$</li>
+<li>$\frac{(n - 1)S^{2} }{\sigma^{2} } = \frac{1}{\sigma^{2} }\sum_{i = 1}^{n}{ {(X_{i} - \overline{X})}^{2}\sim\chi^{2}(n - 1)}$</li>
+<li>$\frac{1}{\sigma^{2} }\sum_{i = 1}^{n}{ {(X_{i} - \mu)}^{2}\sim\chi^{2}(n)}$</li>
+<li>${\ \ }\frac{\overline{X} - \mu}{S/\sqrt{n} }\sim t(n - 1)$</li>
+</ul>
+<h4 id="重要公式与结论-2"><a href="#重要公式与结论-2" class="headerlink" title="重要公式与结论"></a>重要公式与结论</h4><ul>
+<li>对于$\chi^{2}\sim\chi^{2}(n)$，有$E(\chi^{2}(n)) = n,D(\chi^{2}(n)) = 2n$；</li>
+<li>对于$T\sim t(n)$，有$E(T) = 0,D(T) = \frac{n}{n - 2}(n &gt; 2)$；</li>
+<li>对于$F\sim{\ }F(m,n)$，有 $\frac{1}{F}\sim F(n,m),F_{a/2}(m,n) = \frac{1}{F_{1 - a/2}(n,m)}$；</li>
+<li>对于任意总体$X$，有 $E(\overline{X}) = E(X),E(S^{2}) = D(X),D(\overline{X}) = \frac{D(X)}{n}$</li>
+</ul>
+<h1 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h1><h2 id="点估计"><a href="#点估计" class="headerlink" title="点估计"></a>点估计</h2><h3 id="矩估计法"><a href="#矩估计法" class="headerlink" title="矩估计法"></a>矩估计法</h3><h3 id="最大似然估计法"><a href="#最大似然估计法" class="headerlink" title="最大似然估计法"></a>最大似然估计法</h3><h2 id="基于截尾样本的最大似然估计"><a href="#基于截尾样本的最大似然估计" class="headerlink" title="基于截尾样本的最大似然估计"></a>基于截尾样本的最大似然估计</h2><h2 id="估计量的评选标准"><a href="#估计量的评选标准" class="headerlink" title="估计量的评选标准"></a>估计量的评选标准</h2><h3 id="无偏性"><a href="#无偏性" class="headerlink" title="无偏性"></a>无偏性</h3><h3 id="有效性"><a href="#有效性" class="headerlink" title="有效性"></a>有效性</h3><h3 id="相和性"><a href="#相和性" class="headerlink" title="相和性"></a>相和性</h3><h2 id="区间估计"><a href="#区间估计" class="headerlink" title="区间估计"></a>区间估计</h2><h2 id="正态总体均值与方差的区间估计"><a href="#正态总体均值与方差的区间估计" class="headerlink" title="正态总体均值与方差的区间估计"></a>正态总体均值与方差的区间估计</h2><h2 id="0-1-分布参数的区间估计"><a href="#0-1-分布参数的区间估计" class="headerlink" title="(0-1)分布参数的区间估计"></a>(0-1)分布参数的区间估计</h2><h2 id="单侧置信区间"><a href="#单侧置信区间" class="headerlink" title="单侧置信区间"></a>单侧置信区间</h2><h1 id="假设试验"><a href="#假设试验" class="headerlink" title="假设试验"></a>假设试验</h1><h2 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h2><h2 id="正态总体均值的假设检验"><a href="#正态总体均值的假设检验" class="headerlink" title="正态总体均值的假设检验"></a>正态总体均值的假设检验</h2><h3 id="单个总体-N-mu-sigma-2-均值-mu-的检验"><a href="#单个总体-N-mu-sigma-2-均值-mu-的检验" class="headerlink" title="单个总体$N(\mu,\sigma^2)$均值$\mu$的检验"></a>单个总体$N(\mu,\sigma^2)$均值$\mu$的检验</h3><h4 id="sigma-2-已知，关于-mu-的检验（Z检验）"><a href="#sigma-2-已知，关于-mu-的检验（Z检验）" class="headerlink" title="$\sigma^2$已知，关于$\mu$的检验（Z检验）"></a>$\sigma^2$已知，关于$\mu$的检验（Z检验）</h4><h4 id="mu-已知，关于-sigma-2-的检验（t检验）"><a href="#mu-已知，关于-sigma-2-的检验（t检验）" class="headerlink" title="$\mu$已知，关于$\sigma^2$的检验（t检验）"></a>$\mu$已知，关于$\sigma^2$的检验（t检验）</h4><h3 id="两个正态总体均值差的检验（t检验）"><a href="#两个正态总体均值差的检验（t检验）" class="headerlink" title="两个正态总体均值差的检验（t检验）"></a>两个正态总体均值差的检验（t检验）</h3><h3 id="基于成对数据的检验（t检验）"><a href="#基于成对数据的检验（t检验）" class="headerlink" title="基于成对数据的检验（t检验）"></a>基于成对数据的检验（t检验）</h3><h2 id="正态总体方差的假设检验"><a href="#正态总体方差的假设检验" class="headerlink" title="正态总体方差的假设检验"></a>正态总体方差的假设检验</h2><h3 id="单个总体的情况"><a href="#单个总体的情况" class="headerlink" title="单个总体的情况"></a>单个总体的情况</h3><h3 id="两个总体的情况"><a href="#两个总体的情况" class="headerlink" title="两个总体的情况"></a>两个总体的情况</h3><h2 id="置信区间与假设检验之间的关系"><a href="#置信区间与假设检验之间的关系" class="headerlink" title="置信区间与假设检验之间的关系"></a>置信区间与假设检验之间的关系</h2><h2 id="样本容量的选取"><a href="#样本容量的选取" class="headerlink" title="样本容量的选取"></a>样本容量的选取</h2><h2 id="分布拟合检验"><a href="#分布拟合检验" class="headerlink" title="分布拟合检验"></a>分布拟合检验</h2><h3 id="单个分布的-chi-2-拟合检验法"><a href="#单个分布的-chi-2-拟合检验法" class="headerlink" title="单个分布的$\chi^2$拟合检验法"></a>单个分布的$\chi^2$拟合检验法</h3><h3 id="分布族的-chi-2-拟合检验"><a href="#分布族的-chi-2-拟合检验" class="headerlink" title="分布族的$\chi^2$拟合检验"></a>分布族的$\chi^2$拟合检验</h3><h3 id="偏度、峰度检验"><a href="#偏度、峰度检验" class="headerlink" title="偏度、峰度检验"></a>偏度、峰度检验</h3><h2 id="秩和检验"><a href="#秩和检验" class="headerlink" title="秩和检验"></a>秩和检验</h2><h2 id="假设检验问题的p值检验法"><a href="#假设检验问题的p值检验法" class="headerlink" title="假设检验问题的p值检验法"></a>假设检验问题的p值检验法</h2><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.jiazhixiang.xyz" rel="external nofollow noreferrer">賈誌翔</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.jiazhixiang.xyz/2018/12/03/2018-12-03-gai-lu-lun-yu-shu-li-tong-ji/">https://www.jiazhixiang.xyz/2018/12/03/2018-12-03-gai-lu-lun-yu-shu-li-tong-ji/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://www.jiazhixiang.xyz" target="_blank">賈誌翔</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">如果我的文章对你有帮助，可以请我喝一杯咖啡~</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/images/pay/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/images/pay/wechatpay.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2018/12/03/2018-12-03-ci-pin-tong-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="函数程序设计实验十一：词频统计">
+                        
+                        <span class="card-title">函数程序设计实验十一：词频统计</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            {-
+给定一个文本文件，构建文件中所有单词及其出现次数的词频表，并将词频表按照格式要求写到一个文件中。
+词频表按照单词出现次数从高到低次序排列，出现次数相同的按照字典序排列。第十四周上课提交。
+输入文件样例（见text0.txt ）：
+Mi
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-12-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/函数程序设计实验/" class="post-category">
+                                    函数程序设计实验
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/12/03/2018-12-03-xian-xing-dai-shu-ji-chu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="线性代数">
+                        
+                        <span class="card-title">线性代数</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+转载自斯坦福大学2014（吴恩达）机器学习教程中文笔记，感谢编者黄海广博士。
+
+线性代数行列式1.行列式按行（列）展开定理
+(1) 设$A = ( a_{ {ij} } ){n \times n}$，则：$a{i1}A_{j1} +a_{
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-12-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 贾志翔的博客<br />'
+            + '文章作者: 賈誌翔<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2018-2020</span>
+            <a href="https://www.jiazhixiang.xyz" target="_blank">賈誌翔</a>
+            |&nbsp;Powered by&nbsp;<a href="https://www.jiazhixiang.xyz/" target="_blank">吹花小筑工作室</a>
+            |&nbsp;Author&nbsp;<a href="https://www.jiazhixiang.xyz/" target="_blank">贾志翔</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">79.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/jiaxiaochu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:zhixiang.jia@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1072022525" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1072022525" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

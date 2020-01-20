@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>贾志翔的博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.jiazhixiang.xyz/"/>
+  <updated>2020-01-16T09:39:19.738Z</updated>
+  <id>https://www.jiazhixiang.xyz/</id>
+  
+  <author>
+    <name>賈誌翔</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://www.jiazhixiang.xyz/2020/01/16/2019-03-06-ji-suan-ji-wang-luo-di-yi-zhang-gai-shu/"/>
+    <id>https://www.jiazhixiang.xyz/2020/01/16/2019-03-06-ji-suan-ji-wang-luo-di-yi-zhang-gai-shu/</id>
+    <published>2020-01-16T09:39:19.738Z</published>
+    <updated>2020-01-16T09:39:19.738Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是计算机网络？&quot;&gt;&lt;a href=&quot;#什么是计算机网络？&quot; class=&quot;headerlink&quot; title=&quot;什么是计算机网络？&quot;&gt;&lt;/a&gt;什么是计算机网络？&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;计算机网络(computer network)是自主计算机的互连集合。（ANDREW S. TANENBAUM）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;计算机网络是利用通信设备和线路将地理位置不同的、功 能独立的&lt;strong&gt;多个计算机系统***&lt;/strong&gt;连接***起来，以功能完善的网络软件实现网络的硬件、软件及资源共享和信息传递的系统。 简单来说就是连接两台或多台计算机进行通信的系统。（维基百科）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;直接连接的网络&quot;&gt;&lt;a href=&quot;#直接连接的网络&quot; class=&quot;headerlink&quot; title=&quot;直接连接的网络&quot;&gt;&lt;/a&gt;直接连接的网络&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;mermaid&quot;&gt;graph LR
+A--链路（link），专用介质（dedicated medium）---B,节点(node)或主机(host)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;点到点网络 (point-to-point network)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;单向(simplex)&lt;/li&gt;
+&lt;li&gt;半双工(half duplex)&lt;/li&gt;
+&lt;li&gt;全双工(full duplex)&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="https://www.jiazhixiang.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>爬取网易财经中股票的历史交易数据</title>
+    <link href="https://www.jiazhixiang.xyz/2020/01/16/2017-08-14-pa-qu-wang-yi-cai-jing-zhong-gu-piao-de-li-shi-jiao-yi-shu-ju/"/>
+    <id>https://www.jiazhixiang.xyz/2020/01/16/2017-08-14-pa-qu-wang-yi-cai-jing-zhong-gu-piao-de-li-shi-jiao-yi-shu-ju/</id>
+    <published>2020-01-16T09:39:19.737Z</published>
+    <updated>2020-01-16T09:39:19.737Z</updated>
+    
+    <summary type="html">
+    
+      爬去历史股票数据
+    
+    </summary>
+    
+    
+      <category term="Spider" scheme="https://www.jiazhixiang.xyz/categories/Spider/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python中的垃圾回收机制</title>
+    <link href="https://www.jiazhixiang.xyz/2020/01/16/2017-11-17-la-ji-hui-shou/"/>
+    <id>https://www.jiazhixiang.xyz/2020/01/16/2017-11-17-la-ji-hui-shou/</id>
+    <published>2020-01-16T09:39:19.515Z</published>
+    <updated>2020-01-16T09:39:19.515Z</updated>
+    
+    <summary type="html">
+    
+      Python中的垃圾回收机制
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://www.jiazhixiang.xyz/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vim从入门到放弃</title>
+    <link href="https://www.jiazhixiang.xyz/2019/12/30/vim-cong-ru-men-dao-fang-qi/"/>
+    <id>https://www.jiazhixiang.xyz/2019/12/30/vim-cong-ru-men-dao-fang-qi/</id>
+    <published>2019-12-30T09:50:10.000Z</published>
+    <updated>2020-01-17T09:57:50.933Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一：三种常用模式的切换&lt;/p&gt;
+&lt;p&gt;vim启动进入普通模式，处于插入模式或命令行模式时只需要按Esc或者Ctrl+[(这在vim课程环境中不管用)即可进入普通模式。普通模式中按i（插入）或a（附加）键都可以进入插入模式，普通模式中按:进入命令行模式。命令行模式中输入wq回车后保存并退出vim。&lt;/p&gt;
+&lt;p&gt;二：进入vim&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt;使用&lt;strong&gt;vim&lt;/strong&gt;命令进入&lt;strong&gt;vim&lt;/strong&gt;界面&lt;/p&gt;
+&lt;p&gt;​    &lt;strong&gt;-&lt;/strong&gt; vim后面加上你要打开的已存在的文件名或者不存在（则作为新建文件）的文件名。&lt;/p&gt;
+&lt;p&gt;​    - 直接使用vim也可以打开vim编辑器，但是不会打开任何文件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt;游标移动&lt;/p&gt;
+&lt;p&gt;​    - 在进入vim后，按下i键进入插入模式。在该模式下您可以输入文本信息&lt;/p&gt;
+&lt;p&gt;​    - 按Esc进入普通模式，在该模式下使用方向键或者h,j,k,l键可以移动游标。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;按键&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;h&lt;/td&gt;
+&lt;td&gt;左&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;l&lt;/td&gt;
+&lt;td&gt;右（小写L）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;j&lt;/td&gt;
+&lt;td&gt;下&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;k&lt;/td&gt;
+&lt;td&gt;上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;w&lt;/td&gt;
+&lt;td&gt;移动到下一个单词&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;b&lt;/td&gt;
+&lt;td&gt;移动到上一个单词&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+    
+    </summary>
+    
+    
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
+    
+    
+      <category term="vim" scheme="https://www.jiazhixiang.xyz/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac系统Python、PyCharm安装及使用方法详解</title>
+    <link href="https://www.jiazhixiang.xyz/2019/11/20/mac-xi-tong-python-pycharm-an-zhuang-ji-shi-yong-fang-fa-xiang-jie/"/>
+    <id>https://www.jiazhixiang.xyz/2019/11/20/mac-xi-tong-python-pycharm-an-zhuang-ji-shi-yong-fang-fa-xiang-jie/</id>
+    <published>2019-11-20T05:39:13.000Z</published>
+    <updated>2020-01-16T09:39:19.740Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一、下载安装Python3解释器&quot;&gt;&lt;a href=&quot;#一、下载安装Python3解释器&quot; class=&quot;headerlink&quot; title=&quot;一、下载安装Python3解释器&quot;&gt;&lt;/a&gt;一、下载安装Python3解释器&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;使用Python3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Python之父Guido van Rossum在邮件列表上宣布 Python 2.7将于2020年1月1日终止支持。用户如果想要在这个日期之后继续得到与Python 2.7有关的支持，则需要付费给商业供应商。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/11/20/mac-xi-tong-python-pycharm-an-zhuang-ji-shi-yong-fang-fa-xiang-jie/image-20191120150636393.png&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
+    
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="Pycharm" scheme="https://www.jiazhixiang.xyz/tags/Pycharm/"/>
+    
+      <category term="Python解释器" scheme="https://www.jiazhixiang.xyz/tags/Python%E8%A7%A3%E9%87%8A%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Microsoft Store微软应用商店安装Python解释器</title>
+    <link href="https://www.jiazhixiang.xyz/2019/10/25/shi-yong-microsoft-store-wei-ruan-ying-yong-shang-dian-an-zhuang-python-jie-shi-qi/"/>
+    <id>https://www.jiazhixiang.xyz/2019/10/25/shi-yong-microsoft-store-wei-ruan-ying-yong-shang-dian-an-zhuang-python-jie-shi-qi/</id>
+    <published>2019-10-25T09:13:18.000Z</published>
+    <updated>2020-01-16T09:39:19.461Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font color=&quot;red&quot; size=&quot;5&quot;&gt;视屏教程：&lt;a href=&quot;https://www.bilibili.com/video/av70543472/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;使用Microsoft Store微软应用商店安装Python解释器&lt;/a&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&quot;使用Microsoft-Store微软应用商店安装Python解释器&quot;&gt;&lt;a href=&quot;#使用Microsoft-Store微软应用商店安装Python解释器&quot; class=&quot;headerlink&quot; title=&quot;使用Microsoft Store微软应用商店安装Python解释器&quot;&gt;&lt;/a&gt;使用Microsoft Store微软应用商店安装Python解释器&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;使用Microsoft Store微软应用商店需要先注册微软账号并成功登录微软应用商店&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;登录微软应用商店&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/10/25/shi-yong-microsoft-store-wei-ruan-ying-yong-shang-dian-an-zhuang-python-jie-shi-qi/1570448048783.png&quot; alt=&quot;1570448048783&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
+    
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="Python" scheme="https://www.jiazhixiang.xyz/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pycharm指定Python解释器配置说明</title>
+    <link href="https://www.jiazhixiang.xyz/2019/10/25/pycharm-zhi-ding-python-jie-shi-qi-pei-zhi-shuo-ming/"/>
+    <id>https://www.jiazhixiang.xyz/2019/10/25/pycharm-zhi-ding-python-jie-shi-qi-pei-zhi-shuo-ming/</id>
+    <published>2019-10-25T08:28:38.000Z</published>
+    <updated>2020-01-16T09:39:19.337Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font color=&quot;red&quot; size=&quot;5&quot;&gt;视屏教程：&lt;a href=&quot;https://www.bilibili.com/video/av70541622/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Pycharm指定Python解释器配置说明&lt;/a&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打开Pycharm编辑器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/10/25/pycharm-zhi-ding-python-jie-shi-qi-pei-zhi-shuo-ming/1570449574590.png&quot; alt=&quot;1570449574590&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;创建一个新程序&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
+    
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="Pycharm" scheme="https://www.jiazhixiang.xyz/tags/Pycharm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows系统安装配置Pycharm社区版</title>
+    <link href="https://www.jiazhixiang.xyz/2019/10/25/windows-xi-tong-an-zhuang-pei-zhi-pycharm-she-qu-ban/"/>
+    <id>https://www.jiazhixiang.xyz/2019/10/25/windows-xi-tong-an-zhuang-pei-zhi-pycharm-she-qu-ban/</id>
+    <published>2019-10-25T06:53:18.000Z</published>
+    <updated>2020-01-16T09:39:19.545Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font color=&quot;red&quot; size=&quot;5&quot;&gt;视屏教程：&lt;a href=&quot;https://www.bilibili.com/video/av70541345/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Windows系统安装配置Pycharm社区版&lt;/a&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;安装配置Pycharm前请先安装Python解释器&lt;br&gt;Python解释器配置文档连接：&lt;a href=&quot;http://www.jiazhixiang.xyz/2018/05/15/Windows系统Python解释器的安装配置/&quot;&gt;http://www.jiazhixiang.xyz/2018/05/15/Windows系统Python解释器的安装配置/&lt;/a&gt;&lt;br&gt;&lt;font color=&quot;red&quot; size=&quot;5&quot;&gt;视屏教程：&lt;a href=&quot;https://www.bilibili.com/video/av70499867/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Windows系统Python解释器的安装配置&lt;/a&gt;&lt;/font&gt;&lt;br&gt;微软应用商店安装Python解释器文档连接：&lt;a href=&quot;http://www.jiazhixiang.xyz/2019/10/25/使用Microsoft-Store微软应用商店安装Python解释器/&quot;&gt;http://www.jiazhixiang.xyz/2019/10/25/使用Microsoft-Store微软应用商店安装Python解释器/&lt;/a&gt;&lt;br&gt;&lt;font color=&quot;red&quot; size=&quot;5&quot;&gt;视屏教程：&lt;a href=&quot;https://www.bilibili.com/video/av70543472/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;使用Microsoft Store微软应用商店安装Python解释器&lt;/a&gt;&lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;一、下载Pycharm社区版安装包&quot;&gt;&lt;a href=&quot;#一、下载Pycharm社区版安装包&quot; class=&quot;headerlink&quot; title=&quot;一、下载Pycharm社区版安装包&quot;&gt;&lt;/a&gt;一、下载Pycharm社区版安装包&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;使⽤浏览器打开Pycharm官⽅⽹站：&lt;a href=&quot;http://www.jetbrains.com/pycharm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.jetbrains.com/pycharm&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/10/25/windows-xi-tong-an-zhuang-pei-zhi-pycharm-she-qu-ban/1570443388459.png&quot; alt=&quot;1570443388459&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
+    
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="Pycharm" scheme="https://www.jiazhixiang.xyz/tags/Pycharm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>测试Markdown显示</title>
+    <link href="https://www.jiazhixiang.xyz/2019/09/07/ce-shi-markdown-xian-shi/"/>
+    <id>https://www.jiazhixiang.xyz/2019/09/07/ce-shi-markdown-xian-shi/</id>
+    <published>2019-09-07T01:25:00.000Z</published>
+    <updated>2020-01-17T09:59:06.004Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一级标题&quot;&gt;&lt;a href=&quot;#一级标题&quot; class=&quot;headerlink&quot; title=&quot;一级标题&quot;&gt;&lt;/a&gt;一级标题&lt;/h1&gt;&lt;h2 id=&quot;二级标题&quot;&gt;&lt;a href=&quot;#二级标题&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Markdown" scheme="https://www.jiazhixiang.xyz/categories/Markdown/"/>
+    
+    
+      <category term="Typora" scheme="https://www.jiazhixiang.xyz/tags/Typora/"/>
+    
+      <category term="Markdown" scheme="https://www.jiazhixiang.xyz/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pymysql远程连接被拒绝问题解决方法</title>
+    <link href="https://www.jiazhixiang.xyz/2019/07/23/pymysql-yuan-cheng-lian-jie-bei-ju-jue-wen-ti-jie-jue-fang-fa/"/>
+    <id>https://www.jiazhixiang.xyz/2019/07/23/pymysql-yuan-cheng-lian-jie-bei-ju-jue-wen-ti-jie-jue-fang-fa/</id>
+    <published>2019-07-22T16:08:33.000Z</published>
+    <updated>2020-01-16T09:39:19.476Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;pymysql远程连接被拒绝问题解决方法&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pymysql.err.OperationalError: (2003, “Can’t connect to MySQL server on ‘172.16.112.136’ ([Errno 61] Connection refused)”)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;一、 环境信息&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;服务器系统：Ubuntu16.04
+服务器MySQL版本：mysql Ver 14.14 Distrib 5.7.26, for Linux (x86_64) using  EditLine wrapper
+本地系统：MAC
+本地客户端：Pycharm
+本地开发环境：python(3.7.3)，PyMySQL(0.9.3)
+假设：登录用户名为:root，密码为:mysql ，MySQL连接端口:3306&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
+    
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="Bug" scheme="https://www.jiazhixiang.xyz/tags/Bug/"/>
+    
+      <category term="pymysql" scheme="https://www.jiazhixiang.xyz/tags/pymysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu系统搭建配置Python虚拟开发环境</title>
+    <link href="https://www.jiazhixiang.xyz/2019/07/22/ubuntu-xi-tong-da-jian-pei-zhi-python-xu-ni-kai-fa-huan-jing/"/>
+    <id>https://www.jiazhixiang.xyz/2019/07/22/ubuntu-xi-tong-da-jian-pei-zhi-python-xu-ni-kai-fa-huan-jing/</id>
+    <published>2019-07-22T14:57:27.000Z</published>
+    <updated>2020-01-16T09:39:19.519Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;我们知道使用Python的过程中会安装各种库、包，甚至有时候还需要Python2和Python3两种环境混合使用，慢慢的你的Python运行环境会越来越臃肿，这倒还是其次，最可怕的是，有些应用会使用到某个Python包的特定版本，我们知道同一个Python运行环境里面是不能存在同一个包的不同版本的。所有这些都是你为什么要使用&lt;br&gt;Virtualenv的理由。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Virtualenv给你一个&lt;strong&gt;干净的Python运行环境&lt;/strong&gt;，并能让你不同的应用,使用不同版本的包文件提供了可能，甚至使 用&lt;br&gt;它可以让Python2和Python3和谐地共存。对于我们来说，我们用它的原因主要有以下几点：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.我们需要一个干净的Python环境，这个环境只针对我目前开发的应用；
+2.我们不希望多安装一个和项目无关的包，也不希望出现和其它应用有包版本冲突的问题；
+3.我们还需要生成一个requirements.txt用来告诉其他人我项目的依赖；
+4.我们不希望使用pyinstaller打包发布的过程中，给我加进来一堆没有用处的文件。&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;1.搭建虚拟环境主要是为了保证环境得统一性，对于不同得应用建立专属得python环境，比如针对后台开发
+得django可以建立一个虚拟环境，针对爬虫开发得应用可以在建立一个虚拟环境，避免环境之间产生冲突。
+2.可以避免一个环境造成得安装包过的多，导致环境加载缓慢.&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
+    
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="虚拟环境" scheme="https://www.jiazhixiang.xyz/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络 第三章 数据链路层</title>
+    <link href="https://www.jiazhixiang.xyz/2019/03/08/2019-03-08-ji-suan-ji-wang-luo-di-san-zhang-shu-ju-lian-lu-ceng/"/>
+    <id>https://www.jiazhixiang.xyz/2019/03/08/2019-03-08-ji-suan-ji-wang-luo-di-san-zhang-shu-ju-lian-lu-ceng/</id>
+    <published>2019-03-08T10:00:00.000Z</published>
+    <updated>2020-01-16T09:39:19.462Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="https://www.jiazhixiang.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络 第二章 物理层</title>
+    <link href="https://www.jiazhixiang.xyz/2019/03/06/2019-03-06-ji-suan-ji-wang-luo-di-er-zhang-wu-li-ceng/"/>
+    <id>https://www.jiazhixiang.xyz/2019/03/06/2019-03-06-ji-suan-ji-wang-luo-di-er-zhang-wu-li-ceng/</id>
+    <published>2019-03-06T10:00:01.000Z</published>
+    <updated>2020-01-16T09:39:19.460Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;通信系统-Communication-System&quot;&gt;&lt;a href=&quot;#通信系统-Communication-System&quot; class=&quot;headerlink&quot; title=&quot;通信系统(Communication
+        
+      
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="https://www.jiazhixiang.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>前馈神经网络</title>
+    <link href="https://www.jiazhixiang.xyz/2019/02/14/2019-02-14-qian-kui-shen-jing-wang-luo/"/>
+    <id>https://www.jiazhixiang.xyz/2019/02/14/2019-02-14-qian-kui-shen-jing-wang-luo/</id>
+    <published>2019-02-14T14:00:00.000Z</published>
+    <updated>2020-01-16T09:39:19.745Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;节日快乐（并不）…&lt;/p&gt;
+&lt;p&gt;“机器学习”顾名思义就是机器通过对观测到的事物进行归纳，进而总结出它们之间的规律、关系一类。&lt;/p&gt;
+&lt;p&gt;各神经元从输入层开始，接收前一级输入，并输入到下一级，直至输出层。整个网络中无反馈，可用一个DAG（有向无环图）表示。&lt;/p&gt;
+&lt;p
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://www.jiazhixiang.xyz/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>卷积网络做图片分类</title>
+    <link href="https://www.jiazhixiang.xyz/2019/02/08/2019-02-08-juan-ji-wang-luo-zuo-tu-pian-fen-lei/"/>
+    <id>https://www.jiazhixiang.xyz/2019/02/08/2019-02-08-juan-ji-wang-luo-zuo-tu-pian-fen-lei/</id>
+    <published>2019-02-08T10:00:00.000Z</published>
+    <updated>2020-01-16T09:39:19.462Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;一个用CNN做图片分类的例子，是把 CNN 应用于 CIFAR-10 上的 一个实验过程&lt;/p&gt;
+&lt;pre class=&quot; language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://www.jiazhixiang.xyz/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一个基于MINST数据集的神经网络实验</title>
+    <link href="https://www.jiazhixiang.xyz/2019/02/06/2019-02-06-yi-ge-ji-yu-minst-shu-ju-ji-de-shen-jing-wang-luo-shi-yan/"/>
+    <id>https://www.jiazhixiang.xyz/2019/02/06/2019-02-06-yi-ge-ji-yu-minst-shu-ju-ji-de-shen-jing-wang-luo-shi-yan/</id>
+    <published>2019-02-06T10:00:01.000Z</published>
+    <updated>2020-01-16T09:39:19.516Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;照着&lt;a href=&quot;http://www.tensorfly.cn/tfdoc/tutorials/overview.html&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://www.jiazhixiang.xyz/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>配置TensorFlow</title>
+    <link href="https://www.jiazhixiang.xyz/2019/02/06/2019-02-06-pei-zhi-tensorflow/"/>
+    <id>https://www.jiazhixiang.xyz/2019/02/06/2019-02-06-pei-zhi-tensorflow/</id>
+    <published>2019-02-06T10:00:00.000Z</published>
+    <updated>2020-01-16T09:39:19.355Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;该补上的文章🕊了太久了…&lt;/p&gt;
+&lt;h2 id=&quot;工具准备&quot;&gt;&lt;a href=&quot;#工具准备&quot; class=&quot;headerlink&quot; title=&quot;工具准备&quot;&gt;&lt;/a&gt;工具准备&lt;/h2&gt;&lt;h3 id=&quot;jupyter-notebook&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://www.jiazhixiang.xyz/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构</title>
+    <link href="https://www.jiazhixiang.xyz/2019/02/03/2019-02-03-shu-ju-jie-gou/"/>
+    <id>https://www.jiazhixiang.xyz/2019/02/03/2019-02-03-shu-ju-jie-gou/</id>
+    <published>2019-02-03T10:00:09.000Z</published>
+    <updated>2020-01-16T09:39:19.514Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;以下数据结构均采用ll作为值类型，应用时根据需求调整。&lt;/p&gt;
+&lt;pre class=&quot; language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;typedef&lt;/span&gt; &lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="ACM" scheme="https://www.jiazhixiang.xyz/categories/ACM/"/>
+    
+      <category term="Template" scheme="https://www.jiazhixiang.xyz/categories/ACM/Template/"/>
+    
+    
+      <category term="ICPC模板" scheme="https://www.jiazhixiang.xyz/tags/ICPC%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图论</title>
+    <link href="https://www.jiazhixiang.xyz/2019/02/03/2019-02-03-tu-lun/"/>
+    <id>https://www.jiazhixiang.xyz/2019/02/03/2019-02-03-tu-lun/</id>
+    <published>2019-02-03T10:00:08.000Z</published>
+    <updated>2020-01-16T09:39:19.475Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这里用类似邻接表的方法存图。有的算法可能需要邻接矩阵，详见线性代数部分。&lt;/p&gt;
+&lt;pre class=&quot; language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="ACM" scheme="https://www.jiazhixiang.xyz/categories/ACM/"/>
+    
+      <category term="Template" scheme="https://www.jiazhixiang.xyz/categories/ACM/Template/"/>
+    
+    
+      <category term="ICPC模板" scheme="https://www.jiazhixiang.xyz/tags/ICPC%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数论</title>
+    <link href="https://www.jiazhixiang.xyz/2019/02/03/2019-02-03-shu-lun/"/>
+    <id>https://www.jiazhixiang.xyz/2019/02/03/2019-02-03-shu-lun/</id>
+    <published>2019-02-03T10:00:07.000Z</published>
+    <updated>2020-01-16T09:39:19.515Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;辗转相除法&quot;&gt;&lt;a href=&quot;#辗转相除法&quot; class=&quot;headerlink&quot; title=&quot;辗转相除法&quot;&gt;&lt;/a&gt;辗转相除法&lt;/h2&gt;&lt;pre class=&quot; language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;ll
+        
+      
+    
+    </summary>
+    
+    
+      <category term="ACM" scheme="https://www.jiazhixiang.xyz/categories/ACM/"/>
+    
+      <category term="Template" scheme="https://www.jiazhixiang.xyz/categories/ACM/Template/"/>
+    
+    
+      <category term="ICPC模板" scheme="https://www.jiazhixiang.xyz/tags/ICPC%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
+  
+</feed>
