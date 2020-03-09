@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.jiazhixiang.xyz/"/>
-  <updated>2020-01-16T09:39:19.738Z</updated>
+  <updated>2020-01-16T09:39:19.737Z</updated>
   <id>https://www.jiazhixiang.xyz/</id>
   
   <author>
@@ -15,37 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://www.jiazhixiang.xyz/2020/01/16/2019-03-06-ji-suan-ji-wang-luo-di-yi-zhang-gai-shu/"/>
-    <id>https://www.jiazhixiang.xyz/2020/01/16/2019-03-06-ji-suan-ji-wang-luo-di-yi-zhang-gai-shu/</id>
-    <published>2020-01-16T09:39:19.738Z</published>
-    <updated>2020-01-16T09:39:19.738Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;什么是计算机网络？&quot;&gt;&lt;a href=&quot;#什么是计算机网络？&quot; class=&quot;headerlink&quot; title=&quot;什么是计算机网络？&quot;&gt;&lt;/a&gt;什么是计算机网络？&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;计算机网络(computer network)是自主计算机的互连集合。（ANDREW S. TANENBAUM）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;计算机网络是利用通信设备和线路将地理位置不同的、功 能独立的&lt;strong&gt;多个计算机系统***&lt;/strong&gt;连接***起来，以功能完善的网络软件实现网络的硬件、软件及资源共享和信息传递的系统。 简单来说就是连接两台或多台计算机进行通信的系统。（维基百科）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;直接连接的网络&quot;&gt;&lt;a href=&quot;#直接连接的网络&quot; class=&quot;headerlink&quot; title=&quot;直接连接的网络&quot;&gt;&lt;/a&gt;直接连接的网络&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;mermaid&quot;&gt;graph LR
-A--链路（link），专用介质（dedicated medium）---B,节点(node)或主机(host)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;点到点网络 (point-to-point network)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;单向(simplex)&lt;/li&gt;
-&lt;li&gt;半双工(half duplex)&lt;/li&gt;
-&lt;li&gt;全双工(full duplex)&lt;/li&gt;&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="计算机网络" scheme="https://www.jiazhixiang.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>爬取网易财经中股票的历史交易数据</title>
@@ -62,25 +31,6 @@ A--链路（link），专用介质（dedicated medium）---B,节点(node)或主�
     
     
       <category term="Spider" scheme="https://www.jiazhixiang.xyz/categories/Spider/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python中的垃圾回收机制</title>
-    <link href="https://www.jiazhixiang.xyz/2020/01/16/2017-11-17-la-ji-hui-shou/"/>
-    <id>https://www.jiazhixiang.xyz/2020/01/16/2017-11-17-la-ji-hui-shou/</id>
-    <published>2020-01-16T09:39:19.515Z</published>
-    <updated>2020-01-16T09:39:19.515Z</updated>
-    
-    <summary type="html">
-    
-      Python中的垃圾回收机制
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="https://www.jiazhixiang.xyz/categories/Python/"/>
     
     
   </entry>
@@ -364,246 +314,307 @@ A--链路（link），专用介质（dedicated medium）---B,节点(node)或主�
   </entry>
   
   <entry>
-    <title>计算机网络 第三章 数据链路层</title>
-    <link href="https://www.jiazhixiang.xyz/2019/03/08/2019-03-08-ji-suan-ji-wang-luo-di-san-zhang-shu-ju-lian-lu-ceng/"/>
-    <id>https://www.jiazhixiang.xyz/2019/03/08/2019-03-08-ji-suan-ji-wang-luo-di-san-zhang-shu-ju-lian-lu-ceng/</id>
-    <published>2019-03-08T10:00:00.000Z</published>
-    <updated>2020-01-16T09:39:19.462Z</updated>
+    <title>Ubuntu MongoDB数据库的安装和使用</title>
+    <link href="https://www.jiazhixiang.xyz/2018/08/12/ubuntu-an-zhuang-mongodb-he-shi-yong/"/>
+    <id>https://www.jiazhixiang.xyz/2018/08/12/ubuntu-an-zhuang-mongodb-he-shi-yong/</id>
+    <published>2018-08-11T17:26:51.000Z</published>
+    <updated>2020-01-16T09:39:19.740Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;p&gt;本博文介绍了MongoDB，并详细指引读者在Ubuntu下MongoDB的安装和使用。本教程在Ubuntu14.04下测试通过。 &lt;/p&gt;
+&lt;h2 id=&quot;一、MongoDB介绍&quot;&gt;&lt;a href=&quot;#一、MongoDB介绍&quot; class=&quot;headerlink&quot; title=&quot;一、MongoDB介绍&quot;&gt;&lt;/a&gt;一、MongoDB介绍&lt;/h2&gt;&lt;p&gt;MongoDB 是一个是一个基于分布式文件存储的数据库，介于关系数据库和非关系数据库之间，是非关系数据库当中功能最丰富，最像关系数据库的。他支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。&lt;/p&gt;
     
     </summary>
     
     
-      <category term="计算机网络" scheme="https://www.jiazhixiang.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
     
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="MongoDB数据库" scheme="https://www.jiazhixiang.xyz/tags/MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
-    <title>计算机网络 第二章 物理层</title>
-    <link href="https://www.jiazhixiang.xyz/2019/03/06/2019-03-06-ji-suan-ji-wang-luo-di-er-zhang-wu-li-ceng/"/>
-    <id>https://www.jiazhixiang.xyz/2019/03/06/2019-03-06-ji-suan-ji-wang-luo-di-er-zhang-wu-li-ceng/</id>
-    <published>2019-03-06T10:00:01.000Z</published>
-    <updated>2020-01-16T09:39:19.460Z</updated>
+    <title>Ubuntu系统安装MySQL数据库</title>
+    <link href="https://www.jiazhixiang.xyz/2018/07/22/ubuntu-xi-tong-an-zhuang-mysql-shu-ju-ku/"/>
+    <id>https://www.jiazhixiang.xyz/2018/07/22/ubuntu-xi-tong-an-zhuang-mysql-shu-ju-ku/</id>
+    <published>2018-07-22T15:08:42.000Z</published>
+    <updated>2020-01-16T09:39:19.356Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;通信系统-Communication-System&quot;&gt;&lt;a href=&quot;#通信系统-Communication-System&quot; class=&quot;headerlink&quot; title=&quot;通信系统(Communication
-        
-      
+      &lt;blockquote&gt;
+&lt;p&gt;UBuntu16.04安装MySQL&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;一-安装MySQl&quot;&gt;&lt;a href=&quot;#一-安装MySQl&quot; class=&quot;headerlink&quot; title=&quot;一.安装MySQl&quot;&gt;&lt;/a&gt;一.安装MySQl&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;安装前先更新软件包列表：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;在终端执行如下命令：
+sudo apt-get update&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
     
-      <category term="计算机网络" scheme="https://www.jiazhixiang.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
     
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="MySQL" scheme="https://www.jiazhixiang.xyz/tags/MySQL/"/>
+    
+      <category term="数据库" scheme="https://www.jiazhixiang.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
-    <title>前馈神经网络</title>
-    <link href="https://www.jiazhixiang.xyz/2019/02/14/2019-02-14-qian-kui-shen-jing-wang-luo/"/>
-    <id>https://www.jiazhixiang.xyz/2019/02/14/2019-02-14-qian-kui-shen-jing-wang-luo/</id>
-    <published>2019-02-14T14:00:00.000Z</published>
-    <updated>2020-01-16T09:39:19.745Z</updated>
+    <title>Ubuntu纯净卸载软件</title>
+    <link href="https://www.jiazhixiang.xyz/2018/07/22/ubuntu-chun-jing-xie-zai-ruan-jian/"/>
+    <id>https://www.jiazhixiang.xyz/2018/07/22/ubuntu-chun-jing-xie-zai-ruan-jian/</id>
+    <published>2018-07-21T17:52:58.000Z</published>
+    <updated>2020-01-16T09:39:19.518Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;节日快乐（并不）…&lt;/p&gt;
-&lt;p&gt;“机器学习”顾名思义就是机器通过对观测到的事物进行归纳，进而总结出它们之间的规律、关系一类。&lt;/p&gt;
-&lt;p&gt;各神经元从输入层开始，接收前一级输入，并输入到下一级，直至输出层。整个网络中无反馈，可用一个DAG（有向无环图）表示。&lt;/p&gt;
-&lt;p
-        
-      
+      &lt;p&gt;如果你关注搜索到这篇文章，那么我可以合理怀疑你被apt-get的几个卸载命令有点搞晕了。&lt;/p&gt;
+&lt;p&gt;apt-get的卸载相关的命令有&lt;code&gt;remove/purge/autoremove/clean/autoclean&lt;/code&gt;等。具体来说：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt-get purge / apt-get --purge remove 
+删除已安装包（不保留配置文件)。 
+如软件包a，依赖软件包b，则执行该命令会删除a，而且不保留配置文件&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
     
-      <category term="机器学习" scheme="https://www.jiazhixiang.xyz/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
-    <title>卷积网络做图片分类</title>
-    <link href="https://www.jiazhixiang.xyz/2019/02/08/2019-02-08-juan-ji-wang-luo-zuo-tu-pian-fen-lei/"/>
-    <id>https://www.jiazhixiang.xyz/2019/02/08/2019-02-08-juan-ji-wang-luo-zuo-tu-pian-fen-lei/</id>
-    <published>2019-02-08T10:00:00.000Z</published>
-    <updated>2020-01-16T09:39:19.462Z</updated>
+    <title>Ubuntu安装chrome浏览器和chromedriver</title>
+    <link href="https://www.jiazhixiang.xyz/2018/07/22/ubuntu-an-zhuang-chrome-liu-lan-qi-he-chromedriver/"/>
+    <id>https://www.jiazhixiang.xyz/2018/07/22/ubuntu-an-zhuang-chrome-liu-lan-qi-he-chromedriver/</id>
+    <published>2018-07-21T17:30:11.000Z</published>
+    <updated>2020-01-16T09:39:19.738Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;一个用CNN做图片分类的例子，是把 CNN 应用于 CIFAR-10 上的 一个实验过程&lt;/p&gt;
-&lt;pre class=&quot; language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token
-        
-      
+      &lt;h3 id=&quot;安装chrome步骤&quot;&gt;&lt;a href=&quot;#安装chrome步骤&quot; class=&quot;headerlink&quot; title=&quot;安装chrome步骤&quot;&gt;&lt;/a&gt;安装chrome步骤&lt;/h3&gt;&lt;hr&gt;
+&lt;h6 id=&quot;一-下载chrome安装包&quot;&gt;&lt;a href=&quot;#一-下载chrome安装包&quot; class=&quot;headerlink&quot; title=&quot;一. 下载chrome安装包&quot;&gt;&lt;/a&gt;一. 下载chrome安装包&lt;/h6&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;使⽤ubuntu上的⽕狐浏览器打开如下地址：&lt;br&gt;&lt;code&gt;http://www.google.cn/intl/zhCN/chrome/browser/desktop/index.html&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;
     
     </summary>
     
     
-      <category term="机器学习" scheme="https://www.jiazhixiang.xyz/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
     
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="chromedriver" scheme="https://www.jiazhixiang.xyz/tags/chromedriver/"/>
+    
+      <category term="chrome" scheme="https://www.jiazhixiang.xyz/tags/chrome/"/>
     
   </entry>
   
   <entry>
-    <title>一个基于MINST数据集的神经网络实验</title>
-    <link href="https://www.jiazhixiang.xyz/2019/02/06/2019-02-06-yi-ge-ji-yu-minst-shu-ju-ji-de-shen-jing-wang-luo-shi-yan/"/>
-    <id>https://www.jiazhixiang.xyz/2019/02/06/2019-02-06-yi-ge-ji-yu-minst-shu-ju-ji-de-shen-jing-wang-luo-shi-yan/</id>
-    <published>2019-02-06T10:00:01.000Z</published>
-    <updated>2020-01-16T09:39:19.516Z</updated>
+    <title>ubuntu-安装Pycharm，简单粗暴的方法，三行命令行</title>
+    <link href="https://www.jiazhixiang.xyz/2018/07/22/ubuntu-an-zhuang-pycharm-jian-dan-cu-bao-de-fang-fa-san-xing-ming-ling-xing/"/>
+    <id>https://www.jiazhixiang.xyz/2018/07/22/ubuntu-an-zhuang-pycharm-jian-dan-cu-bao-de-fang-fa-san-xing-ming-ling-xing/</id>
+    <published>2018-07-21T17:26:02.000Z</published>
+    <updated>2020-01-16T09:39:19.463Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;照着&lt;a href=&quot;http://www.tensorfly.cn/tfdoc/tutorials/overview.html&quot; target=&quot;_blank&quot;
-        
-      
+      &lt;h3 id=&quot;对于Ubuntu-16-10和Ubuntu-17-04，通过Ctrl-Alt-T打开终端，或通过从应用启动器搜索“terminal”，打开后，执行以下步骤：&quot;&gt;&lt;a href=&quot;#对于Ubuntu-16-10和Ubuntu-17-04，通过Ctrl-Alt-T打开终端，或通过从应用启动器搜索“terminal”，打开后，执行以下步骤：&quot; class=&quot;headerlink&quot; title=&quot;对于Ubuntu 16.10和Ubuntu 17.04，通过Ctrl + Alt + T打开终端，或通过从应用启动器搜索“terminal”，打开后，执行以下步骤：&quot;&gt;&lt;/a&gt;对于Ubuntu 16.10和Ubuntu 17.04，通过Ctrl + Alt + T打开终端，或通过从应用启动器搜索“terminal”，打开后，执行以下步骤：&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;.通过命令添加PPA存储库：&lt;br&gt;&lt;code&gt;sudo add-apt-repository ppa:mystic-mirage/pycharm&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
     
     </summary>
     
     
-      <category term="机器学习" scheme="https://www.jiazhixiang.xyz/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
     
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="Pycharm" scheme="https://www.jiazhixiang.xyz/tags/Pycharm/"/>
+    
+      <category term="Python解释器的安装与配置" scheme="https://www.jiazhixiang.xyz/tags/Python%E8%A7%A3%E9%87%8A%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
-    <title>配置TensorFlow</title>
-    <link href="https://www.jiazhixiang.xyz/2019/02/06/2019-02-06-pei-zhi-tensorflow/"/>
-    <id>https://www.jiazhixiang.xyz/2019/02/06/2019-02-06-pei-zhi-tensorflow/</id>
-    <published>2019-02-06T10:00:00.000Z</published>
-    <updated>2020-01-16T09:39:19.355Z</updated>
+    <title>Deepin中安装配置ChromeDriver</title>
+    <link href="https://www.jiazhixiang.xyz/2018/06/22/deepin-zhong-an-zhuang-pei-zhi-chromedriver/"/>
+    <id>https://www.jiazhixiang.xyz/2018/06/22/deepin-zhong-an-zhuang-pei-zhi-chromedriver/</id>
+    <published>2018-06-21T17:28:54.000Z</published>
+    <updated>2020-01-16T09:39:19.518Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;该补上的文章🕊了太久了…&lt;/p&gt;
-&lt;h2 id=&quot;工具准备&quot;&gt;&lt;a href=&quot;#工具准备&quot; class=&quot;headerlink&quot; title=&quot;工具准备&quot;&gt;&lt;/a&gt;工具准备&lt;/h2&gt;&lt;h3 id=&quot;jupyter-notebook&quot;&gt;&lt;a
-        
-      
+      &lt;h3 id=&quot;查看当前的Chrome版本信息&quot;&gt;&lt;a href=&quot;#查看当前的Chrome版本信息&quot; class=&quot;headerlink&quot; title=&quot;查看当前的Chrome版本信息&quot;&gt;&lt;/a&gt;查看当前的Chrome版本信息&lt;/h3&gt;&lt;p&gt;在谷歌浏览器地址栏中输入&lt;code&gt;chrome://version/&lt;/code&gt;可以查看当前的Chrome信息：&lt;/p&gt;
     
     </summary>
     
     
-      <category term="机器学习" scheme="https://www.jiazhixiang.xyz/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
     
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="Deepin" scheme="https://www.jiazhixiang.xyz/tags/Deepin/"/>
+    
+      <category term="ChromeDriver" scheme="https://www.jiazhixiang.xyz/tags/ChromeDriver/"/>
     
   </entry>
   
   <entry>
-    <title>数据结构</title>
-    <link href="https://www.jiazhixiang.xyz/2019/02/03/2019-02-03-shu-ju-jie-gou/"/>
-    <id>https://www.jiazhixiang.xyz/2019/02/03/2019-02-03-shu-ju-jie-gou/</id>
-    <published>2019-02-03T10:00:09.000Z</published>
-    <updated>2020-01-16T09:39:19.514Z</updated>
+    <title>安装谷歌拼音</title>
+    <link href="https://www.jiazhixiang.xyz/2018/06/22/an-zhuang-gu-ge-pin-yin/"/>
+    <id>https://www.jiazhixiang.xyz/2018/06/22/an-zhuang-gu-ge-pin-yin/</id>
+    <published>2018-06-21T17:24:59.000Z</published>
+    <updated>2020-01-16T09:39:19.336Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;以下数据结构均采用ll作为值类型，应用时根据需求调整。&lt;/p&gt;
-&lt;pre class=&quot; language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;typedef&lt;/span&gt; &lt;span
-        
-      
+      &lt;p&gt;linux下面的中文输入法一直不给力，Ubuntu里正常使用的搜狗输入法经常突然无法输出中文（具体现象是，可以呼出搜狗输入法界面，但是候选词列表无显示）虽然用惯了搜狗输入法但是实在忍不了啦，于是痛定思痛果断换掉。&lt;/p&gt;
+&lt;p&gt;现在,google拼音输入法可以用了！&lt;/p&gt;
     
     </summary>
     
     
-      <category term="ACM" scheme="https://www.jiazhixiang.xyz/categories/ACM/"/>
-    
-      <category term="Template" scheme="https://www.jiazhixiang.xyz/categories/ACM/Template/"/>
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
     
     
-      <category term="ICPC模板" scheme="https://www.jiazhixiang.xyz/tags/ICPC%E6%A8%A1%E6%9D%BF/"/>
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="谷歌输入法" scheme="https://www.jiazhixiang.xyz/tags/%E8%B0%B7%E6%AD%8C%E8%BE%93%E5%85%A5%E6%B3%95/"/>
     
   </entry>
   
   <entry>
-    <title>图论</title>
-    <link href="https://www.jiazhixiang.xyz/2019/02/03/2019-02-03-tu-lun/"/>
-    <id>https://www.jiazhixiang.xyz/2019/02/03/2019-02-03-tu-lun/</id>
-    <published>2019-02-03T10:00:08.000Z</published>
-    <updated>2020-01-16T09:39:19.475Z</updated>
+    <title>安装Ubuntu后要做的事</title>
+    <link href="https://www.jiazhixiang.xyz/2018/06/22/an-zhuang-ubuntu-hou-yao-zuo-de-shi/"/>
+    <id>https://www.jiazhixiang.xyz/2018/06/22/an-zhuang-ubuntu-hou-yao-zuo-de-shi/</id>
+    <published>2018-06-21T17:02:42.000Z</published>
+    <updated>2020-01-16T09:39:19.517Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;这里用类似邻接表的方法存图。有的算法可能需要邻接矩阵，详见线性代数部分。&lt;/p&gt;
-&lt;pre class=&quot; language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt;
-        
-      
+      &lt;h3 id=&quot;Ubuntu-16-04安装完成后，还需要做一些配置才能愉快的使用，所以装完系统后还要进行一系列的优化。&quot;&gt;&lt;a href=&quot;#Ubuntu-16-04安装完成后，还需要做一些配置才能愉快的使用，所以装完系统后还要进行一系列的优化。&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu 16.04安装完成后，还需要做一些配置才能愉快的使用，所以装完系统后还要进行一系列的优化。&quot;&gt;&lt;/a&gt;Ubuntu 16.04安装完成后，还需要做一些配置才能愉快的使用，所以装完系统后还要进行一系列的优化。&lt;/h3&gt;&lt;h3 id=&quot;1-删除libreoffice&quot;&gt;&lt;a href=&quot;#1-删除libreoffice&quot; class=&quot;headerlink&quot; title=&quot;1.删除libreoffice&quot;&gt;&lt;/a&gt;1.删除libreoffice&lt;/h3&gt;&lt;p&gt;libreoffice虽然是开源的，但是Java写出来的office执行效率实在不敢恭维，装完系统后果断删掉&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get remove libreoffice-common&lt;/code&gt;&lt;/p&gt;
     
     </summary>
     
     
-      <category term="ACM" scheme="https://www.jiazhixiang.xyz/categories/ACM/"/>
-    
-      <category term="Template" scheme="https://www.jiazhixiang.xyz/categories/ACM/Template/"/>
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
     
     
-      <category term="ICPC模板" scheme="https://www.jiazhixiang.xyz/tags/ICPC%E6%A8%A1%E6%9D%BF/"/>
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="Python解释器的安装与配置" scheme="https://www.jiazhixiang.xyz/tags/Python%E8%A7%A3%E9%87%8A%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
-    <title>数论</title>
-    <link href="https://www.jiazhixiang.xyz/2019/02/03/2019-02-03-shu-lun/"/>
-    <id>https://www.jiazhixiang.xyz/2019/02/03/2019-02-03-shu-lun/</id>
-    <published>2019-02-03T10:00:07.000Z</published>
-    <updated>2020-01-16T09:39:19.515Z</updated>
+    <title>在Deepin系统下安装Anaconda</title>
+    <link href="https://www.jiazhixiang.xyz/2018/06/12/zai-deepin-xi-tong-xia-an-zhuang-anaconda/"/>
+    <id>https://www.jiazhixiang.xyz/2018/06/12/zai-deepin-xi-tong-xia-an-zhuang-anaconda/</id>
+    <published>2018-06-11T17:29:24.000Z</published>
+    <updated>2020-01-16T09:39:19.461Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;辗转相除法&quot;&gt;&lt;a href=&quot;#辗转相除法&quot; class=&quot;headerlink&quot; title=&quot;辗转相除法&quot;&gt;&lt;/a&gt;辗转相除法&lt;/h2&gt;&lt;pre class=&quot; language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;ll
-        
-      
+      &lt;h2 id=&quot;运行安装Anaconda&quot;&gt;&lt;a href=&quot;#运行安装Anaconda&quot; class=&quot;headerlink&quot; title=&quot;运行安装Anaconda&quot;&gt;&lt;/a&gt;运行安装Anaconda&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;bash Anaconda3-4.3.1-Linux-x86_64.sh&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
     
-      <category term="ACM" scheme="https://www.jiazhixiang.xyz/categories/ACM/"/>
-    
-      <category term="Template" scheme="https://www.jiazhixiang.xyz/categories/ACM/Template/"/>
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
     
     
-      <category term="ICPC模板" scheme="https://www.jiazhixiang.xyz/tags/ICPC%E6%A8%A1%E6%9D%BF/"/>
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="Deepin" scheme="https://www.jiazhixiang.xyz/tags/Deepin/"/>
+    
+      <category term="Anaconda" scheme="https://www.jiazhixiang.xyz/tags/Anaconda/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vmware虚拟机安装和配置Ubuntu系统</title>
+    <link href="https://www.jiazhixiang.xyz/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/"/>
+    <id>https://www.jiazhixiang.xyz/2018/05/22/vmware-xu-ni-ji-an-zhuang-he-pei-zhi-ubuntu-xi-tong/</id>
+    <published>2018-05-21T16:46:01.000Z</published>
+    <updated>2020-01-17T09:58:53.961Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;创建带有 SCSI 控制器类型、虚拟机磁盘类型以及与旧版 VMware 产品兼容性等高级选项的虚拟机&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;安装前准备：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装好VMwareWorkstation&lt;/li&gt;
+&lt;li&gt;Ubuntu16.04镜像文件&lt;ul&gt;
+&lt;li&gt;（下载地址链接：&lt;a href=&quot;https://pan.baidu.com/s/1MSBBv9NOh7_cFgTMUQPEhQ&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://pan.baidu.com/s/1MSBBv9NOh7_cFgTMUQPEhQ&lt;/a&gt; 提取码：w6g7 ）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Ubuntu18.04镜像文件&lt;ul&gt;
+&lt;li&gt;（下载地址链接：链接：&lt;a href=&quot;https://pan.baidu.com/s/1uhPj0ttM9M7QxpR3Z4LI5g&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://pan.baidu.com/s/1uhPj0ttM9M7QxpR3Z4LI5g&lt;/a&gt; 提取码：il08 ）&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
+    
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="系统配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="Ubuntu" scheme="https://www.jiazhixiang.xyz/tags/Ubuntu/"/>
+    
+      <category term="VMware" scheme="https://www.jiazhixiang.xyz/tags/VMware/"/>
+    
+      <category term="虚拟机" scheme="https://www.jiazhixiang.xyz/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows系统安装配置Pycharm专业版</title>
+    <link href="https://www.jiazhixiang.xyz/2018/05/22/windows-xi-tong-an-zhuang-pei-zhi-pycharm-zhuan-ye-ban/"/>
+    <id>https://www.jiazhixiang.xyz/2018/05/22/windows-xi-tong-an-zhuang-pei-zhi-pycharm-zhuan-ye-ban/</id>
+    <published>2018-05-21T16:30:14.000Z</published>
+    <updated>2020-01-16T09:39:19.739Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;安装配置Pycharm前请先安装Python解释器&lt;br&gt;Python解释器配置文档连接：&lt;a href=&quot;http://www.jiazhixiang.xyz/2018/05/15/Windows系统Python解释器的安装配置/&quot;&gt;http://www.jiazhixiang.xyz/2018/05/15/Windows系统Python解释器的安装配置/&lt;/a&gt;&lt;br&gt;&lt;font color=&quot;red&quot; size=&quot;5&quot;&gt;视屏教程：&lt;a href=&quot;https://www.bilibili.com/video/av70499867/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Windows系统Python解释器的安装配置&lt;/a&gt;&lt;/font&gt;&lt;br&gt;微软应用商店安装Python解释器文档连接：&lt;a href=&quot;http://www.jiazhixiang.xyz/2019/10/25/使用Microsoft-Store微软应用商店安装Python解释器/&quot;&gt;http://www.jiazhixiang.xyz/2019/10/25/使用Microsoft-Store微软应用商店安装Python解释器/&lt;/a&gt;&lt;br&gt;&lt;font color=&quot;red&quot; size=&quot;5&quot;&gt;视屏教程：&lt;a href=&quot;https://www.bilibili.com/video/av70543472/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;使用Microsoft Store微软应用商店安装Python解释器&lt;/a&gt;&lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;下载Pycharm&quot;&gt;&lt;a href=&quot;#下载Pycharm&quot; class=&quot;headerlink&quot; title=&quot;下载Pycharm&quot;&gt;&lt;/a&gt;下载Pycharm&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;使用浏览器打开Pycharm官方网站：&lt;a href=&quot;http://www.jetbrains.com/pycharm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.jetbrains.com/pycharm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;选择对应的系统安装包，点击DOWNLOAD进行下载(文档以Windows系统举例)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/2018/05/22/windows-xi-tong-an-zhuang-pei-zhi-pycharm-zhuan-ye-ban/1554517581446.png&quot; alt=&quot;1554517581446&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="『环境配置』- 工欲善其事，必先利其器" scheme="https://www.jiazhixiang.xyz/categories/%E3%80%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E3%80%8F-%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B%EF%BC%8C%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/"/>
+    
+    
+      <category term="环境配置" scheme="https://www.jiazhixiang.xyz/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="Pycharm" scheme="https://www.jiazhixiang.xyz/tags/Pycharm/"/>
     
   </entry>
   
